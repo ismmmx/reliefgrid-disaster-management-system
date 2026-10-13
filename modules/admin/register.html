@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReliefGrid - User Registration</title>
+</head>
+<body>
+    <header>
+        <h1>ReliefGrid: Disaster Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+
+    <main>
+        <section>
+            <h2>Create New Account</h2>
+            <p>Fill out the form below to register in the ReliefGrid platform.</p>
+
+            <form action="#" method="POST">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <p>
+                        <label for="fullname">Full Name:</label><br>
+                        <input type="text" id="fullname" name="fullname" required placeholder="Enter full name">
+                    </p>
+                    <p>
+                        <label for="email">Email Address:</label><br>
+                        <input type="email" id="email" name="email" required placeholder="example@domain.com">
+                    </p>
+                    <p>
+                        <label for="phone">Phone Number:</label><br>
+                        <input type="tel" id="phone" name="phone" required placeholder="017XXXXXXXX">
+                    </p>
+                    <p>
+                        <label for="password">Password:</label><br>
+                        <input type="password" id="password" name="password" required placeholder="Create password">
+                    </p>
+                    <p>
+                        <label for="confirm_password">Confirm Password:</label><br>
+                        <input type="password" id="confirm_password" name="confirm_password" required placeholder="Re-enter password">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Account Type & Location Details</legend>
+                    <p>
+                        <label for="role">Register As:</label><br>
+                        <select id="role" name="role" required>
+                            <option value="" disabled selected>-- Select Account Type --</option>
+                            <option value="shelter">Shelter & Volunteer Manager</option>
+                            <option value="inventory">Relief Inventory Handler</option>
+                            <option value="emergency">Emergency Requester / Victim / General Public</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="district">District / Area:</label><br>
+                        <input type="text" id="district" name="district" required placeholder="e.g. Feni, Sylhet, Noakhali">
+                    </p>
+                    <p>
+                        <label for="address">Detailed Address:</label><br>
+                        <textarea id="address" name="address" rows="3" cols="30" placeholder="Enter village/house address"></textarea>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Submit Registration</button>
+                    <button type="reset">Reset Fields</button>
+                </p>
+            </form>
+
+            <p>Already registered? <a href="login.html">Login here</a></p>
+        </section>
+    </main>
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 ReliefGrid Disaster Management System | Group 4 (CSC 3215)</p>
+    </footer>
+</body>
+</html>

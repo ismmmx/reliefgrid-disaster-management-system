@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReliefGrid - System Login</title>
+</head>
+<body>
+    <header>
+        <h1>ReliefGrid: Disaster Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+
+    <main>
+        <section>
+            <h2>User Account Login</h2>
+            <p>Select your system role and enter your credentials to access the system.</p>
+
+            <form action="#" method="POST">
+                <fieldset>
+                    <legend>Login Credentials</legend>
+                    
+                    <p>
+                        <label for="email">Email Address:</label><br>
+                        <input type="email" id="email" name="email" required placeholder="example@domain.com">
+                    </p>
+
+                    <p>
+                        <label for="password">Password:</label><br>
+                        <input type="password" id="password" name="password" required placeholder="Enter password">
+                    </p>
+
+                    <p>
+                        <label for="role">System Role:</label><br>
+                        <select id="role" name="role" required>
+                            <option value="" disabled selected>-- Select Role --</option>
+                            <option value="admin">System Admin</option>
+                            <option value="shelter">Shelter & Volunteer Manager</option>
+                            <option value="inventory">Relief Inventory Handler</option>
+                            <option value="emergency">Emergency Requester / Victim</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <button type="submit">Login to Account</button>
+                        <button type="reset">Clear Form</button>
+                    </p>
+                </fieldset>
+            </form>
+
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </section>
+    </main>
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 ReliefGrid Disaster Management System | Group 4 (CSC 3215)</p>
+    </footer>
+</body>
+</html>
