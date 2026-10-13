@@ -6,39 +6,65 @@
     <title>ReliefGrid - System Login</title>
 </head>
 <body>
+
+    <!-- Top Header Bar -->
     <header>
         <h1>ReliefGrid: Disaster Management System</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-            </ul>
-        </nav>
+        <p>A Centralized Web Platform for Flood Relief & Resource Distribution</p>
     </header>
     <hr>
 
+    <!-- Top Navigation Bar -->
+    <nav>
+        <b>Navigation:</b> 
+        <a href="../../index.html">Home</a> | 
+        <a href="login.html">Login</a> | 
+        <a href="register.html">Register</a> | 
+        <a href="#help">Help & Support</a>
+    </nav>
+    <hr>
+
+    <!-- Page Layout using Semantic Structure -->
     <main>
+        <!-- Left Sidebar Navigation -->
+        <aside>
+            <h3>Quick Links & User Portals</h3>
+            <ul>
+                <li><a href="../../index.html">Public Portal Home</a></li>
+                <li><a href="login.html">System Login</a></li>
+                <li><a href="../admin/register.html">Admin Registration</a></li>
+                <li><a href="../shelter/register.html">Shelter Manager Registration</a></li>
+                <li><a href="../inventory/register.html">Inventory Handler Registration</a></li>
+                <li><a href="../emergency/register.html">Emergency Request Registration</a></li>
+            </ul>
+            <hr>
+            <h3>Emergency Helpline</h3>
+            <p><strong>National Disaster Response:</strong> 1090</p>
+            <p><strong>Relief Control Room:</strong> +880 1700-000000</p>
+        </aside>
+        <hr>
+
+        <!-- Middle Main Content Section -->
         <section>
             <h2>User Account Login</h2>
-            <p>Select your system role and enter your credentials to access the system.</p>
+            <p>Select your assigned system role and enter your login credentials to access your module dashboard.</p>
 
             <form action="#" method="POST">
+
                 <fieldset>
-                    <legend>Login Credentials</legend>
-                    
-                    <p>
-                        <label for="email">Email Address:</label><br>
-                        <input type="email" id="email" name="email" required placeholder="example@domain.com">
-                    </p>
+                    <legend>Authentication Details</legend>
+                    <h2>Account Login</h2>
 
-                    <p>
-                        <label for="password">Password:</label><br>
+                    <div>
+                        User Email Address:
+                        <input type="email" id="email" name="email" required placeholder="example@domain.com"> 
+
+                        Password:
                         <input type="password" id="password" name="password" required placeholder="Enter password">
-                    </p>
+                    </div> <br>
 
-                    <p>
-                        <label for="role">System Role:</label><br>
+                    <div>
+                        System Role:
                         <select id="role" name="role" required>
                             <option value="" disabled selected>-- Select Role --</option>
                             <option value="admin">System Admin</option>
@@ -46,31 +72,54 @@
                             <option value="inventory">Relief Inventory Handler</option>
                             <option value="emergency">Emergency Requester / Victim</option>
                         </select>
-                    </p>
 
-                    <p>
-                        <button type="submit">Login to Account</button>
-                        <button type="reset">Clear Form</button>
-                    </p>
-                </fieldset>
-            </form>
+                        Access Level:
+                        <input type="text" id="access" name="access" value="Role Based" readonly>
+                    </div> <br>
 
-            <p>New User? Register below based on your role:</p>
-<ul>
-<li><a href="modules/admin/register.html">Admin Registration</a></li>
-<li><a href="modules/shelter/register.html">Shelter Registration</a></li>
-<li><a href="modules/inventory/register.html">Inventory Registration (Your Module)</a></li>
-<li><a href="modules/emergency/register.html">Emergency Request Registration</a></li>
-</ul>
+                    <div>
+                        Remember Login Session:
+                        <input type="checkbox" id="remember" name="remember" value="yes"> Yes
+                    </div>
+                </fieldset> <br>
 
+                <fieldset>
+                    <legend>Module Registration Links</legend>
+                    <h2>New User? Choose Registration Type</h2>
 
-            <p>Don't have an account? <a href="register.html">Register here</a></p>
+                    <div>
+                        Please select your respective module link below to create a new user account:
+                    </div> <br>
+
+                    <div>
+                        <ul>
+                            <li><a href="../admin/register.html">Admin Registration Portal</a></li>
+                            <li><a href="../shelter/register.html">Shelter & Volunteer Manager Registration</a></li>
+                            <li><a href="../inventory/register.html">Relief Inventory Handler Registration</a></li>
+                            <li><a href="../emergency/register.html">Emergency Requester / Victim Registration</a></li>
+                        </ul>
+                    </div>
+                </fieldset> <br>
+
+                <div>
+                    <input type="submit" value="Login to Account">
+                    <input type="reset" value="Clear Form">
+                </div>
+
+            </form> <br>
+
+            <div>
+                <p>Don't have an account yet? <a href="register.html">General Registration Here</a></p>
+            </div>
         </section>
     </main>
     <hr>
 
+    <!-- Footer Area -->
     <footer>
-        <p>&copy; 2026 ReliefGrid Disaster Management System | Group 4 (CSC 3215)</p>
+        <p>&copy; 2026 ReliefGrid Disaster Management System | Group 4 (CSC 3215: Web Technologies)</p>
+        <p>Contact Support: support@reliefgrid.org | Department of CSE, AIUB</p>
     </footer>
+
 </body>
 </html>
