@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReliefGrid - Inventory Handler Registration</title>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <table border="1" width="100%" cellpadding="10">
+        <tr>
+            <td align="center">
+                <h1>ReliefGrid</h1>
+                <h3>Inventory Handler Account Registration</h3>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <!-- Navigation Bar -->
+    <table border="1" width="100%" cellpadding="8">
+        <tr>
+            <td align="center">
+                <a href="../../index.html"><button type="button">Go to Home Page</button></a> | 
+                <a href="../../login.html"><button type="button">Go to Login Page</button></a>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <!-- Registration Form Section -->
+    <form action="../../login.html" method="POST">
+        
+        <!-- Fieldset 1: Personal Information -->
+        <fieldset>
+            <legend><b>1. Personal & Contact Details</b></legend>
+            <br>
+            <table border="0" cellpadding="8" align="center" width="90%">
+                <tr>
+                    <td><label for="fullname">Full Name:</label></td>
+                    <td><input type="text" id="fullname" name="fullname" placeholder="e.g. Eshtiak Ferdous" required></td>
+                    
+                    <td><label for="dob">Date of Birth:</label></td>
+                    <td><input type="date" id="dob" name="dob" required></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender:</label></td>
+                    <td>
+                        <select id="gender" name="gender" required>
+                            <option value="" disabled selected>-- Select Gender --</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </td>
+
+                    <td><label for="religion">Religion:</label></td>
+                    <td>
+                        <select id="religion" name="religion" required>
+                            <option value="" disabled selected>-- Select Religion --</option>
+                            <option value="islam">Islam</option>
+                            <option value="hinduism">Hinduism</option>
+                            <option value="buddhism">Buddhism</option>
+                            <option value="christianity">Christianity</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="blood_group">Blood Group:</label></td>
+                    <td>
+                        <select id="blood_group" name="blood_group" required>
+                            <option value="" disabled selected>-- Select Blood Group --</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </td>
+
+                    <td><label for="phone">Phone Number:</label></td>
+                    <td><input type="tel" id="phone" name="phone" placeholder="e.g. +8801700000000" required></td>
+                </tr>
+                <tr>
+                    <td><label for="nid">NID / National ID:</label></td>
+                    <td colspan="3"><input type="text" id="nid" name="nid" placeholder="Enter NID Number" required></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <br>
+
+        <!-- Fieldset 2: Official Duty Details -->
+        <fieldset>
+            <legend><b>2. Official Duty & Assignment Details</b></legend>
+            <br>
+            <table border="0" cellpadding="8" align="center" width="90%">
+                <tr>
+                    <td><label for="empid">Employee / Staff ID:</label></td>
+                    <td><input type="text" id="empid" name="empid" placeholder="e.g. INV-2026-001" required></td>
+                    
+                    <td><label for="warehouse">Assigned Warehouse:</label></td>
+                    <td><input type="text" id="warehouse" name="warehouse" placeholder="e.g. Central Warehouse, Sylhet" required></td>
+                </tr>
+                <tr>
+                    <td><label for="region">Assigned District / Division:</label></td>
+                    <td><input type="text" id="region" name="region" placeholder="e.g. Sylhet Sadar" required></td>
+                    
+                    <td><label for="shift">Duty Shift:</label></td>
+                    <td>
+                        <select id="shift" name="shift" required>
+                            <option value="day">Day Shift</option>
+                            <option value="night">Night Shift</option>
+                            <option value="emergency">24/7 Emergency Response</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <br>
+
+        <!-- Fieldset 3: Account Credentials for Login -->
+        <fieldset>
+            <legend><b>3. System Login Credentials</b></legend>
+            <br>
+            <table border="0" cellpadding="8" align="center" width="90%">
+                <tr>
+                    <td><label for="email">User Email Address:</label></td>
+                    <td colspan="3"><input type="email" id="email" name="email" placeholder="example@domain.com" required size="30"></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Set Password:</label></td>
+                    <td><input type="password" id="password" name="password" placeholder="Enter password" required></td>
+
+                    <td><label for="confirm_password">Confirm Password:</label></td>
+                    <td><input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter password" required></td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="center">
+                        <br>
+                        <input type="submit" value="Register Account">
+                        <input type="reset" value="Clear Form">
+                    </td>
+                </tr>
+            </table>
+            <br>
+        </fieldset>
+
+    </form>
+
+    <br>
+
+    <!-- Footer Section -->
+    <table border="0" width="100%" cellpadding="5">
+        <tr>
+            <td align="center">
+                <hr>
+                <small>&copy; 2026 ReliefGrid Disaster Management System | Inventory Module</small>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
