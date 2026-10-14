@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+   
     <title>Shelter Registration - ReliefGrid</title>
 </head>
 <body>
-
-    
+ 
+   
     <header>
         <h1>ReliefGrid: Disaster Management System</h1>
         <nav>
@@ -17,62 +17,62 @@
             </ul>
         </nav>
     </header>
-
+ 
     <hr>
-
+ 
     <main>
         <h2>Create Shelter Provider Account</h2>
         <p>Fill out the form below to register your shelter facility in the ReliefGrid platform.</p>
-
+ 
    
         <form action="login.html" method="POST" enctype="multipart/form-data">
-            
+           
            
             <fieldset>
                 <legend>Personal & Account Information</legend>
-                
+               
                 <p>
                     <label for="fullname">Full Name:</label><br>
                     <input type="text" id="fullname" name="fullname" size="45" required placeholder="Enter full name">
                 </p>
-
+ 
                 <p>
                     <label for="email">Email Address:</label><br>
                     <input type="email" id="email" name="email" size="45" required placeholder="example@domain.com">
                 </p>
-
+ 
                 <p>
                     <label for="phone">Phone Number:</label><br>
                     <input type="tel" id="phone" name="phone" size="45" required placeholder="017XXXXXXXX">
                 </p>
-
+ 
                 <p>
                     <label for="password">Password:</label><br>
                     <input type="password" id="password" name="password" size="45" required minlength="8" placeholder="Create password">
                 </p>
             </fieldset>
-
+ 
             <br>
-
+ 
            
             <fieldset>
                 <legend>Shelter Facility & Logistics Details</legend>
-
+ 
                 <p>
                     <label for="shelter_name">Shelter Name:</label><br>
                     <input type="text" id="shelter_name" name="shelter_name" size="45" required placeholder="e.g. Central Community Shelter">
                 </p>
-
+ 
                 <p>
                     <label for="shelter_address">Shelter Location / Address:</label><br>
                     <textarea id="shelter_address" name="shelter_address" rows="4" cols="45" required placeholder="Enter full street/area details"></textarea>
                 </p>
-
+ 
                 <p>
                     <label for="capacity">Shelter Capacity (Total Capacity):</label><br>
                     <input type="number" id="capacity" name="capacity" min="10" max="10000" required placeholder="e.g. 500">
                 </p>
-
+ 
                 <p>
                     <label for="shelter_type">Shelter Type:</label><br>
                     <select id="shelter_type" name="shelter_type" required>
@@ -83,15 +83,15 @@
                         <option value="camp">Temporary Relief Camp</option>
                     </select>
                 </p>
-
+ 
                 <p>
                     <label for="gov_id">NID / Government ID Upload:</label><br>
                     <input type="file" id="gov_id" name="gov_id" required>
                 </p>
             </fieldset>
-
+ 
             <br>
-
+ 
          
             <p>
                 <input type="submit" value="Register Shelter">
@@ -99,16 +99,16 @@
             <p>
                 <input type="reset" value="Clear All Fields">
             </p>
-
+ 
         </form>
-
+ 
     </main>
-
+ 
     <hr>
-
+ 
     <footer>
         <p><a href="/index.html">Exit / Back to Home</a></p>
     </footer>
-
+ 
 </body>
 </html>
