@@ -1,9 +1,17 @@
-h1 {color:red;}
+h1 {
+    color:red;
+    font:bolder;
+    font-size: xx-large;
+    font-style: italic;
+    font-display: block;
+}
 h2 {color: green;}
 
 legend {color:blueviolet;}
 
-body{background-color: black;}
+body{
+    background-color:antiquewhite;
+}
 
 td{
     background-color: gray;
@@ -13,4 +21,8 @@ td{
 input{
     background-color: aquamarine;
     color: black;
+}
+
+fieldset{
+    background-color: aliceblue;
 }
