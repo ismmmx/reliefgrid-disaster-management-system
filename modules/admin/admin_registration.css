@@ -1,0 +1,16 @@
+h1 {color:red;}
+h2 {color: green;}
+
+legend {color:blueviolet;}
+
+body{background-color: black;}
+
+td{
+    background-color: gray;
+    color:yellow;
+}
+
+input{
+    background-color: aquamarine;
+    color: black;
+}
