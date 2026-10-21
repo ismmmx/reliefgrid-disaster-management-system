@@ -1,107 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReliefGrid - System Login</title>
+    <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
 
-    <!-- Header Section -->
-    <table border="1" width="100%" cellpadding="10">
-        <tr>
-            <td align="center">
-                <h1>ReliefGrid</h1>
-                <h3>Flood Relief and Disaster Management System</h3>
-            </td>
-        </tr>
-    </table>
+    <!-- Header Navigation Bar -->
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-title">ReliefGrid</h1>
+            <span class="logo-sub">Disaster Management</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="login.html" class="active">Login</a>
+            <a href="index.html#register-section" class="btn-nav">Register</a>
+        </nav>
+    </header>
 
-    <br>
+    <!-- Main Container -->
+    <main class="login-wrapper">
+        <div class="login-card">
+            <div class="login-header">
+                <h2>User Account Login</h2>
+                <p>Select your assigned role and enter credentials to access dashboard</p>
+            </div>
 
-    <!-- Navigation Bar -->
-    <table border="1" width="100%" cellpadding="8">
-        <tr>
-            <td align="center">
-                <a href="index.html">Home</a> | 
-                <a href="login.html">Login</a> | 
-                <a href="index.html#register-section">Registration</a>
-            </td>
-        </tr>
-    </table>
+            <form action="#" method="POST" class="login-form">
+                <div class="form-group">
+                    <label for="email">User Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="name@domain.com" required>
+                </div>
 
-    <br>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" required>
+                </div>
 
-    <!-- Login Form Section -->
-    <form action="#" method="POST">
-        <fieldset>
-            <legend><b>User Account Login</b></legend>
-            <br>
-            <table border="0" cellpadding="8" align="center">
-                <tr>
-                    <td><label for="email">User Email Address:</label></td>
-                    <td><input type="email" id="email" name="email" placeholder="example@domain.com" required></td>
-                </tr>
-                <tr>
-                    <td><label for="password">Password:</label></td>
-                    <td><input type="password" id="password" name="password" placeholder="Enter password" required></td>
-                </tr>
-                <tr>
-                    <td><label for="role">System Role:</label></td>
-                    <td>
-                        <select id="role" name="role" required>
-                            <option value="" disabled selected>-- Select Your Role --</option>
-                            <option value="admin">System Admin</option>
-                            <option value="shelter">Shelter & Volunteer Manager</option>
-                            <option value="inventory">Relief Inventory Handler</option>
-                            <option value="emergency">Emergency Requester / Victim</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Remember Session:</td>
-                    <td>
+                <div class="form-group">
+                    <label for="role">System Access Role</label>
+                    <select id="role" name="role" required>
+                        <option value="" disabled selected>-- Select Your System Role --</option>
+                        <option value="admin">System Admin</option>
+                        <option value="shelter">Shelter & Volunteer Manager</option>
+                        <option value="inventory">Relief Inventory Handler</option>
+                        <option value="emergency">Emergency Requester / Victim</option>
+                    </select>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
                         <input type="checkbox" id="remember" name="remember" value="yes">
-                        <label for="remember">Keep me logged in</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center">
-                        <br>
-                        <button type="submit">Login to Account</button>
-                        <button type="reset">Clear Form</button>
-                    </td>
-                </tr>
-            </table>
-            <br>
-        </fieldset>
-    </form>
+                        <span>Remember Login Session</span>
+                    </label>
+                </div>
 
-    <br>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Login to Account</button>
+                    <button type="reset" class="btn btn-outline">Clear</button>
+                </div>
+            </form>
 
-    <!-- Registration Redirect Notice -->
-    <table border="1" width="100%" cellpadding="10">
-        <tr>
-            <td align="center">
-                <b>Don't have an account yet?</b> 
-                <a href="index.html#register-section">
-                    <button type="button">Go to Home Page to Register</button>
-                </a>
-            </td>
-        </tr>
-    </table>
+            <div class="login-footer">
+                <p>Don't have an account yet?</p>
+                <a href="index.html#register-section" class="register-link">Register New Department Account</a>
+            </div>
+        </div>
+    </main>
 
-    <br>
-
-    <!-- Footer Section -->
-    <table border="0" width="100%" cellpadding="5">
-        <tr>
-            <td align="center">
-                <hr>
-                <small>&copy; 2026 ReliefGrid Disaster Management System</small>
-            </td>
-        </tr>
-    </table>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 ReliefGrid Disaster Management System | Group 4 (CSC 3215)</p>
+    </footer>
 
 </body>
+
 </html>

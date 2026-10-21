@@ -1,123 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReliefGrid - System Admin Registration</title>
     <link rel="stylesheet" href="admin_registration.css">
 </head>
+
 <body>
 
-    <!-- Header Box Style -->
-    <fieldset>
-        <legend></legend>
-        <div align="center">
-            <h1>ReliefGrid: Disaster Management System</h1>
-            <h2>System Administrator Registration Form</h2>
+    <!-- Header Navigation Bar -->
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-title">ReliefGrid</h1>
+            <span class="logo-sub">Admin Registration Portal</span>
         </div>
-    </fieldset>
-    <br>
+        <nav class="nav-links">
+            <a href="../../index.html" class="btn-nav-outline">Go to Home Page</a>
+            <a href="../../login.html" class="btn-nav">Go to Login Page</a>
+        </nav>
+    </header>
 
-    <!-- Navigation Bar Box Style -->
-    <fieldset>
-        <legend></legend>
-        <div align="center">
-            <a href="../../index.html"><button type="button">Go to Home Page</button></a> | 
-            <a href="login.html"><button type="button">Go to Login Page</button></a>
+    <!-- Main Container -->
+    <main class="container">
+
+        <div class="registration-card">
+            <div class="card-title-bar">
+                <h2>System Administrator Account Registration</h2>
+                <p>Authorized access portal for disaster response management personnel</p>
+            </div>
+
+            <form action="#" method="POST" class="admin-form">
+
+                <!-- Section 1: Basic Information -->
+                <div class="form-section">
+                    <h3 class="section-heading">1. Personal & Account Credentials</h3>
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="fullname">Full Name *</label>
+                            <input type="text" id="fullname" name="fullname" required
+                                placeholder="e.g. Ishmam Mubtasim">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Official Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="admin@reliefgrid.org">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Contact Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="017XXXXXXXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dob">Date of Birth *</label>
+                            <input type="date" id="dob" name="dob" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <input type="password" id="password" name="password" required
+                                placeholder="Create strong password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm_password">Confirm Password *</label>
+                            <input type="password" id="confirm_password" name="confirm_password" required
+                                placeholder="Re-enter password">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Section 2: Administrative Privilege & Authorization -->
+                <div class="form-section">
+                    <h3 class="section-heading">2. Administrative Authorization & Jurisdiction</h3>
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="region">Assigned Region / District *</label>
+                            <input type="text" id="region" name="region" required
+                                placeholder="e.g. Feni, Sylhet, Noakhali">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Gender *</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gender" value="male" checked> Male</label>
+                                <label><input type="radio" name="gender" value="female"> Female</label>
+                                <label><input type="radio" name="gender" value="other"> Other</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="secret_key">Authorization Token / Secret Passcode *</label>
+                            <input type="password" id="secret_key" name="secret_key" required
+                                placeholder="Enter secret key provided by IT">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_proof">Identity Proof Document (NID/Passport) *</label>
+                            <input type="file" id="id_proof" name="id_proof" required class="file-input">
+                        </div>
+
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="address">Administrative Office Address & Notes</label>
+                        <textarea id="address" name="address" rows="3"
+                            placeholder="Enter full office address or emergency coordination notes..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Register Administrator</button>
+                    <button type="reset" class="btn btn-secondary">Reset Form</button>
+                </div>
+
+            </form>
         </div>
-    </fieldset>
-    <br>
 
-    <!-- Main Form Area -->
-    <form action="#" method="POST">
-        
-        <fieldset>
-            <legend><h3>System Admin Account Details</h3></legend>
+    </main>
 
-            <!-- Table Structure for Perfect 2-Column Alignment -->
-            <table border="0" cellpadding="8" cellspacing="0" width="100%">
-                <tr>
-                    <td width="20%">Full Name:</td>
-                    <td width="30%">
-                        <input type="text" id="fullname" name="fullname" required placeholder="e.g. Ishmam Mubtasim">
-                    </td>
-                    <td width="20%">Email Address:</td>
-                    <td width="30%">
-                        <input type="email" id="email" name="email" required placeholder="admin@reliefgrid.org">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Phone Number:</td>
-                    <td>
-                        <input type="tel" id="phone" name="phone" required placeholder="017XXXXXXXX">
-                    </td>
-                    <td>Date of Birth:</td>
-                    <td>
-                        <input type="date" id="dob" name="dob" required>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Password:</td>
-                    <td>
-                        <input type="password" id="password" name="password" required placeholder="Enter password">
-                    </td>
-                    <td>Confirm Password:</td>
-                    <td>
-                        <input type="password" id="confirm_password" name="confirm_password" required placeholder="Re-enter password">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Assigned Region / District:</td>
-                    <td>
-                        <input type="text" id="region" name="region" required placeholder="e.g. Feni, Sylhet, Noakhali">
-                    </td>
-                    <td>Gender:</td>
-                    <td>
-                        <input type="radio" id="male" name="gender" value="male" checked> Male
-                        <input type="radio" id="female" name="gender" value="female"> Female
-                        <input type="radio" id="other" name="gender" value="other"> Other
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Security Passcode / Secret Key:</td>
-                    <td>
-                        <input type="password" id="secret_key" name="secret_key" required placeholder="Enter Authorization Token">
-                    </td>
-                    <td>Identity Proof (NID / Passport):</td>
-                    <td>
-                        <input type="file" id="id_proof" name="id_proof" required>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td valign="top">Office Address / Notes:</td>
-                    <td colspan="3">
-                        <textarea id="address" name="address" rows="3" cols="60" placeholder="Enter administrative office address or additional details..."></textarea>
-                    </td>
-                </tr>
-            </table>
-
-        </fieldset>
-        <br>
-
-        <!-- Submit & Reset Action Buttons -->
-        <div>
-            <input type="submit" value="Register Administrator">
-            <input type="reset" value="Clear Form">
-        </div>
-
-    </form>
-    <br>
-
-    <hr>
-    <!-- Footer Section -->
-    <div align="center">
+    <!-- Footer -->
+    <footer class="footer">
         <p>&copy; 2026 ReliefGrid Administrator Module | Department of CSE, AIUB</p>
-    </div>
+    </footer>
 
 </body>
+
 </html>
