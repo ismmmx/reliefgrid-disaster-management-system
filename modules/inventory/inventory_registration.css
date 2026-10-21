@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    min-height: 100vh;
+    padding: 30px 15px;
+    color: #2d3748;
+}
+
+table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border: none !important;
+}
+h1 {
+    color: #2b6cb0;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+h3 {
+    color: #4a5568;
+    font-size: 16px;
+    font-weight: 500;
+}
+a {
+    color: #3182ce;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    background-color: #3182ce;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(49, 130, 206, 0.3);
+}
+fieldset {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: none;
+    border-radius: 16px;
+    padding: 35px 40px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+legend {
+    background: linear-gradient(90deg, #3182ce, #63b3ed);
+    color: #ffffff;
+    padding: 10px 25px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.4);
+}
+td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+label {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 15px;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #2d3748;
+    background-color: #f7fafc;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #3182ce;
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(49, 130, 206, 0.25);
+}
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: #3182ce;
+    transform: scale(1.2);
+    margin-right: 8px;
+    cursor: pointer;
+}
+button {
+    padding: 12px 32px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 8px;
+    letter-spacing: 0.5px;
+}
+button[type="submit"],
+button:not([type="reset"]) {
+    background: linear-gradient(90deg, #10b981, #059669);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+button[type="submit"]:hover,
+button:not([type="reset"]):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(16, 185, 129, 0.6);
+    background: linear-gradient(90deg, #059669, #047857);
+}
+button[type="reset"] {
+    background: linear-gradient(90deg, #ef4444, #dc2626);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+button[type="reset"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(239, 68, 68, 0.6);
+    background: linear-gradient(90deg, #dc2626, #b91c1c);
+}
+hr {
+    border: 0;
+    height: 1px;
+    background: #cbd5e0;
+    margin: 20px 0 10px 0;
+}
+
+small {
+    color: #718096;
+    font-size: 13px;
+    font-weight: 500;
+}
