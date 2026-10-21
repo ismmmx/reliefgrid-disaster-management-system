@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReliefGrid - System Admin Registration</title>
+    <link rel="stylesheet" href="admin_registration.css">
+</head>
+<body>
+
+    <!-- Header Box Style -->
+    <fieldset>
+        <legend></legend>
+        <div align="center">
+            <h1>ReliefGrid: Disaster Management System</h1>
+            <h2>System Administrator Registration Form</h2>
+        </div>
+    </fieldset>
+    <br>
+
+    <!-- Navigation Bar Box Style -->
+    <fieldset>
+        <legend></legend>
+        <div align="center">
+            <a href="../../index.html"><button type="button">Go to Home Page</button></a> | 
+            <a href="login.html"><button type="button">Go to Login Page</button></a>
+        </div>
+    </fieldset>
+    <br>
+
+    <!-- Main Form Area -->
+    <form action="#" method="POST">
+        
+        <fieldset>
+            <legend><h3>System Admin Account Details</h3></legend>
+
+            <!-- Table Structure for Perfect 2-Column Alignment -->
+            <table border="0" cellpadding="8" cellspacing="0" width="100%">
+                <tr>
+                    <td width="20%">Full Name:</td>
+                    <td width="30%">
+                        <input type="text" id="fullname" name="fullname" required placeholder="e.g. Ishmam Mubtasim">
+                    </td>
+                    <td width="20%">Email Address:</td>
+                    <td width="30%">
+                        <input type="email" id="email" name="email" required placeholder="admin@reliefgrid.org">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Phone Number:</td>
+                    <td>
+                        <input type="tel" id="phone" name="phone" required placeholder="017XXXXXXXX">
+                    </td>
+                    <td>Date of Birth:</td>
+                    <td>
+                        <input type="date" id="dob" name="dob" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Password:</td>
+                    <td>
+                        <input type="password" id="password" name="password" required placeholder="Enter password">
+                    </td>
+                    <td>Confirm Password:</td>
+                    <td>
+                        <input type="password" id="confirm_password" name="confirm_password" required placeholder="Re-enter password">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Assigned Region / District:</td>
+                    <td>
+                        <input type="text" id="region" name="region" required placeholder="e.g. Feni, Sylhet, Noakhali">
+                    </td>
+                    <td>Gender:</td>
+                    <td>
+                        <input type="radio" id="male" name="gender" value="male" checked> Male
+                        <input type="radio" id="female" name="gender" value="female"> Female
+                        <input type="radio" id="other" name="gender" value="other"> Other
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Security Passcode / Secret Key:</td>
+                    <td>
+                        <input type="password" id="secret_key" name="secret_key" required placeholder="Enter Authorization Token">
+                    </td>
+                    <td>Identity Proof (NID / Passport):</td>
+                    <td>
+                        <input type="file" id="id_proof" name="id_proof" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td valign="top">Office Address / Notes:</td>
+                    <td colspan="3">
+                        <textarea id="address" name="address" rows="3" cols="60" placeholder="Enter administrative office address or additional details..."></textarea>
+                    </td>
+                </tr>
+            </table>
+
+        </fieldset>
+        <br>
+
+        <!-- Submit & Reset Action Buttons -->
+        <div>
+            <input type="submit" value="Register Administrator">
+            <input type="reset" value="Clear Form">
+        </div>
+
+    </form>
+    <br>
+
+    <hr>
+    <!-- Footer Section -->
+    <div align="center">
+        <p>&copy; 2026 ReliefGrid Administrator Module | Department of CSE, AIUB</p>
+    </div>
+
+</body>
+</html>
