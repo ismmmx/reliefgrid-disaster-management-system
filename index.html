@@ -1,111 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReliefGrid - Flood Relief & Disaster Management System</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
-    <!-- Header Section -->
-    <table border="1" width="100%" cellpadding="10">
-        <tr>
-            <td align="center">
-                <h1>ReliefGrid</h1>
-                <h3>Flood Relief and Disaster Management System</h3>
-            </td>
-        </tr>
-    </table>
+    <!-- Header Navigation Bar -->
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-title">ReliefGrid</h1>
+            <span class="logo-sub">Disaster Management</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="login.html">Login</a>
+            <a href="#about">About Project</a>
+            <a href="#register-section" class="btn-nav">Registration</a>
+        </nav>
+    </header>
 
-    <br>
+    <!-- Hero Banner Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>Flood Relief & Disaster Management System</h2>
+            <p>A centralized platform driving rapid response, shelter tracking, resource inventory, and emergency aid
+                during flood crises.</p>
+            <div class="hero-buttons">
+                <a href="login.html" class="btn btn-primary">Login to Portal</a>
+                <a href="#register-section" class="btn btn-secondary">Select Department Role</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- Navigation Bar -->
-    <table border="1" width="100%" cellpadding="8">
-        <tr>
-            <td align="center">
-                <a href="index.html">Home</a> | 
-                <a href="login.html">Login</a> | 
-                <a href="#about">About Project</a> | 
-                <a href="#register-section">Registration</a>
-            </td>
-        </tr>
-    </table>
+    <!-- Main Content Container -->
+    <main class="container">
 
-    <br>
+        <!-- About Section -->
+        <section id="about" class="card">
+            <div class="card-header">
+                <h3>About ReliefGrid Platform</h3>
+            </div>
+            <div class="card-body">
+                <p>Welcome to <strong>ReliefGrid</strong>. Our system simplifies coordinate workflows between field
+                    teams, emergency victims, shelter managers, and inventory handlers.</p>
+                <p>If you are an assigned coordinator or need urgent aid, please register under your specific module
+                    below or log in to your account.</p>
+            </div>
+        </section>
 
-    <!-- About Section -->
-    <fieldset>
-        <legend><b>About ReliefGrid</b></legend>
-        <p>
-            Welcome to <b>ReliefGrid</b>. Our system is designed to facilitate quick response, efficient shelter tracking, 
-            inventory distribution, and emergency assistance during flood disasters.
-        </p>
-        <p>
-            If you already have an account, please proceed to the Login page. New users and managers can register using the specific modules below.
-        </p>
-        <a href="login.html">
-            <button type="button">Go to Login Page</button>
-        </a>
-    </fieldset>
+        <!-- Department Role Registration Grid -->
+        <section id="register-section" class="card">
+            <div class="card-header">
+                <h3>System Department Portals</h3>
+                <p>Select your authorized department to proceed with user registration:</p>
+            </div>
+            <div class="card-body">
+                <div class="role-grid">
+                    <div class="role-card">
+                        <h4>1. System Admin</h4>
+                        <p>Central management, policy enforcement, and platform oversight.</p>
+                        <a href="modules/admin/admin_registration.html" class="btn btn-role">Admin Registration</a>
+                    </div>
+                    <div class="role-card">
+                        <h4>2. Shelter Manager</h4>
+                        <p>Shelter tracking, capacity monitoring, and volunteer assignment.</p>
+                        <a href="modules/shelter/shelter_registration.html" class="btn btn-role">Shelter
+                            Registration</a>
+                    </div>
+                    <div class="role-card">
+                        <h4>3. Inventory Handler</h4>
+                        <p>Stock management, donation tracking, and supply distribution.</p>
+                        <a href="modules/inventory/inventory_registration.html" class="btn btn-role">Inventory
+                            Registration</a>
+                    </div>
+                    <div class="role-card">
+                        <h4>4. Emergency Victim</h4>
+                        <p>Direct aid requests, emergency alerts, and rescue assistance.</p>
+                        <a href="modules/emergency/emergency_registration.html" class="btn btn-role">Emergency
+                            Request</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <br>
+        <!-- Emergency Hotline Bar -->
+        <div class="hotline-banner">
+            <span class="hotline-icon">🚨</span>
+            <div class="hotline-text">
+                <strong>National Disaster Helpline: 1090 / 999</strong>
+                <span>Stay Informed & Stay Safe During Emergency Operations</span>
+            </div>
+        </div>
 
-    <!-- Registration Section -->
-<fieldset id="register-section">
-    <legend><b>System Registration (Select Your Role)</b></legend>
-    <p>Choose your specific department to complete the registration process:</p>
+    </main>
 
-    <table border="0" cellpadding="10" width="100%">
-        <tr>
-            <td align="center">
-               
-                <a href="modules/admin/admin_registration.html">
-                    <button type="button">1. Admin Registration</button>
-                </a>
-            </p>
-            <td align="center">
-                
-                <a href="modules/Shelter/shelter_registration.html">
-                    <button type="button">2. Shelter Registration</button>
-                </a>
-            </td>
-            <td align="center">
-                
-                <a href="modules/Inventory/inventory_registration.html">
-                    <button type="button">3. Inventory Registration</button>
-                </a>
-            </td>
-            <td align="center">
-                
-                <a href="modules/emergency/shelter_registration.html">
-                    <button type="button">4. Emergency Request</button>
-                </a>
-            </td>
-        </tr>
-    </table>
-</fieldset>
-
-    <br>
-
-    <!-- Emergency Hotline -->
-    <table border="1" width="100%" cellpadding="8">
-        <tr>
-            <td align="center">
-                <b>Emergency Disaster Helpline: 1090 / 999</b> | Stay Safe & Stay Connected
-            </td>
-        </tr>
-    </table>
-
-    <br>
-
-    <!-- Footer Section -->
-    <table border="0" width="100%" cellpadding="5">
-        <tr>
-            <td align="center">
-                <hr>
-                <small>&copy; 2026 ReliefGrid Team. All Rights Reserved.</small>
-            </td>
-        </tr>
-    </table>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 ReliefGrid Team | Group 4 (CSC 3215 Web Tech Project)</p>
+        <p>Department of CSE, AIUB</p>
+    </footer>
 
 </body>
+
 </html>
