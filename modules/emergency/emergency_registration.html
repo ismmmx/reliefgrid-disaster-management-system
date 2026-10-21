@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Victim Registration - ReliefGrid</title>
+</head>
+<body>
+
+<h2>Victim Registration Form</h2>
+
+<form>
+  <label for="fullname">Full Name:</label><br>
+  <input type="text" id="fullname" name="fullname"><br><br>
+
+  <label for="phone">Contact / Mobile Number:</label><br>
+  <input type="tel" id="phone" name="phone"><br><br>
+
+  <label for="email">Email Address:</label><br>
+  <input type="email" id="email" name="email"><br><br>
+
+  <label for="password">Password:</label><br>
+  <input type="password" id="password" name="password"><br><br>
+
+  <label for="location">Current Location / Flood-Affected Area:</label><br>
+  <input type="text" id="location" name="location"><br><br>
+
+  <label for="familysize">Family Size / Number of Dependents:</label><br>
+  <input type="number" id="familysize" name="familysize"><br><br>
+
+  <label>Immediate Emergency Type Needed:</label><br>
+  <input type="checkbox" id="emergency1" name="emergency" value="Food/Water">
+  <label for="emergency1"> Food/Water</label><br>
+  <input type="checkbox" id="emergency2" name="emergency" value="Medical Assistance">
+  <label for="emergency2"> Medical Assistance</label><br>
+  <input type="checkbox" id="emergency3" name="emergency" value="Evacuation">
+  <label for="emergency3"> Emergency Evacuation</label><br><br>
+
+  <label>Vulnerable Group Status:</label><br>
+  <input type="checkbox" id="vuln1" name="vulnerable" value="Infants">
+  <label for="vuln1"> Infants/Toddlers</label><br>
+  <input type="checkbox" id="vuln2" name="vulnerable" value="Elderly">
+  <label for="vuln2"> Elderly Members</label><br>
+  <input type="checkbox" id="vuln3" name="vulnerable" value="Disabled">
+  <label for="vuln3"> Persons with Disabilities</label><br><br>
+
+  <label>Current Shelter Status:</label><br>
+  <input type="radio" id="status1" name="shelter" value="Trapped">
+  <label for="status1"> Trapped at Home</label><br>
+  <input type="radio" id="status2" name="shelter" value="Stranded">
+  <label for="status2"> Stranded on Embankment/Road</label><br><br>
+
+  <input type="submit" value="Register">
+</form>
+
+</body>
+</html>
