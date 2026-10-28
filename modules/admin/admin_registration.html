@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <!-- Header Navigation Bar -->
     <header class="navbar">
         <div class="logo-container">
             <h1 class="logo-title">ReliefGrid</h1>
@@ -19,7 +20,9 @@
         </nav>
     </header>
 
+    <!-- Main Container -->
     <main class="container">
+
         <div class="registration-card">
             <div class="card-title-bar">
                 <h2>System Administrator Account Registration</h2>
@@ -27,13 +30,16 @@
             </div>
 
             <form action="#" method="POST" class="admin-form">
-                
-                <fieldset class="form-fieldset">
-                    <legend>1. Personal & Account Credentials</legend>
+
+                <!-- Section 1: Basic Information -->
+                <div class="form-section">
+                    <h3 class="section-heading">1. Personal & Account Credentials</h3>
                     <div class="form-grid">
+
                         <div class="form-group">
                             <label for="fullname">Full Name *</label>
-                            <input type="text" id="fullname" name="fullname" required placeholder="e.g. Ishmam Mubtasim">
+                            <input type="text" id="fullname" name="fullname" required
+                                placeholder="e.g. Ishmam Mubtasim">
                         </div>
 
                         <div class="form-group">
@@ -53,22 +59,27 @@
 
                         <div class="form-group">
                             <label for="password">Password *</label>
-                            <input type="password" id="password" name="password" required placeholder="Create strong password">
+                            <input type="password" id="password" name="password" required
+                                placeholder="Create strong password">
                         </div>
 
                         <div class="form-group">
                             <label for="confirm_password">Confirm Password *</label>
-                            <input type="password" id="confirm_password" name="confirm_password" required placeholder="Re-enter password">
+                            <input type="password" id="confirm_password" name="confirm_password" required
+                                placeholder="Re-enter password">
                         </div>
                     </div>
-                </fieldset>
+                </div>
 
-                <fieldset class="form-fieldset">
-                    <legend>2. Administrative Authorization & Jurisdiction</legend>
+                <!-- Section 2: Administrative Privilege & Authorization -->
+                <div class="form-section">
+                    <h3 class="section-heading">2. Administrative Authorization & Jurisdiction</h3>
                     <div class="form-grid">
+
                         <div class="form-group">
                             <label for="region">Assigned Region / District *</label>
-                            <input type="text" id="region" name="region" required placeholder="e.g. Feni, Sylhet, Noakhali">
+                            <input type="text" id="region" name="region" required
+                                placeholder="e.g. Feni, Sylhet, Noakhali">
                         </div>
 
                         <div class="form-group">
@@ -82,7 +93,8 @@
 
                         <div class="form-group">
                             <label for="secret_key">Authorization Token / Secret Passcode *</label>
-                            <input type="password" id="secret_key" name="secret_key" required placeholder="Enter secret key provided by IT">
+                            <input type="password" id="secret_key" name="secret_key" required
+                                placeholder="Enter secret key provided by IT">
                         </div>
 
                         <div class="form-group">
@@ -93,10 +105,12 @@
 
                     <div class="form-group full-width">
                         <label for="address">Administrative Office Address & Notes</label>
-                        <textarea id="address" name="address" rows="3" placeholder="Enter full office address or emergency coordination notes..."></textarea>
+                        <textarea id="address" name="address" rows="3"
+                            placeholder="Enter full office address or emergency coordination notes..."></textarea>
                     </div>
                 </fieldset>
 
+                <!-- Action Buttons -->
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">Register Administrator</button>
                     <button type="reset" class="btn btn-secondary">Reset Form</button>
