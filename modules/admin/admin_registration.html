@@ -1,148 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReliefGrid - System Admin Registration</title>
     <link rel="stylesheet" href="admin_registration.css">
 </head>
-
 <body>
 
-    <!-- Top Navigation Header -->
     <header class="navbar">
-        <div class="nav-brand">
-            <h1 class="brand-title">ReliefGrid</h1>
-            <span class="brand-badge">Admin Portal</span>
+        <div class="logo-container">
+            <h1 class="logo-title">ReliefGrid</h1>
+            <span class="logo-sub">Admin Registration Portal</span>
         </div>
         <nav class="nav-links">
-            <a href="../../index.html" class="nav-btn-link">Home Page</a>
-            <a href="../../login.html" class="nav-btn-primary">Account Login</a>
+            <a href="../../index.html" class="btn-nav-outline">Go to Home Page</a>
+            <a href="../../login.html" class="btn-nav">Go to Login Page</a>
         </nav>
     </header>
 
-    <!-- Main Container -->
-    <main class="page-container">
-
-        <div class="form-card">
-            <div class="card-header">
-                <h2>System Administrator Registration</h2>
-                <p>Complete the authorization form below to create a central admin control account.</p>
+    <main class="container">
+        <div class="registration-card">
+            <div class="card-title-bar">
+                <h2>System Administrator Account Registration</h2>
+                <p>Authorized access portal for disaster response management personnel</p>
             </div>
 
-            <form action="#" method="POST" class="form-body">
-
-                <!-- Section 1: Personal Credentials Card -->
-                <div class="section-card">
-                    <h3 class="section-title">
-                        <span class="step-number">1</span> Personal & Account Credentials
-                    </h3>
-                    <div class="input-grid">
-
-                        <div class="input-field">
-                            <label for="fullname">Full Name <span class="required">*</span></label>
-                            <input type="text" id="fullname" name="fullname" required
-                                placeholder="e.g. Ishmam Mubtasim">
+            <form action="#" method="POST" class="admin-form">
+                
+                <fieldset class="form-fieldset">
+                    <legend>1. Personal & Account Credentials</legend>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullname">Full Name *</label>
+                            <input type="text" id="fullname" name="fullname" required placeholder="e.g. Ishmam Mubtasim">
                         </div>
 
-                        <div class="input-field">
-                            <label for="email">Official Email Address <span class="required">*</span></label>
+                        <div class="form-group">
+                            <label for="email">Official Email Address *</label>
                             <input type="email" id="email" name="email" required placeholder="admin@reliefgrid.org">
                         </div>
 
-                        <div class="input-field">
-                            <label for="phone">Phone Number <span class="required">*</span></label>
+                        <div class="form-group">
+                            <label for="phone">Contact Phone Number *</label>
                             <input type="tel" id="phone" name="phone" required placeholder="017XXXXXXXX">
                         </div>
 
-                        <div class="input-field">
-                            <label for="dob">Date of Birth <span class="required">*</span></label>
-                            <input type="date" id="dob" name="dob" required class="date-input">
+                        <div class="form-group">
+                            <label for="dob">Date of Birth *</label>
+                            <input type="date" id="dob" name="dob" required>
                         </div>
 
-                        <div class="input-field">
-                            <label for="password">Security Password <span class="required">*</span></label>
-                            <input type="password" id="password" name="password" required
-                                placeholder="Create strong password">
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <input type="password" id="password" name="password" required placeholder="Create strong password">
                         </div>
 
-                        <div class="input-field">
-                            <label for="confirm_password">Confirm Password <span class="required">*</span></label>
-                            <input type="password" id="confirm_password" name="confirm_password" required
-                                placeholder="Re-enter password">
+                        <div class="form-group">
+                            <label for="confirm_password">Confirm Password *</label>
+                            <input type="password" id="confirm_password" name="confirm_password" required placeholder="Re-enter password">
                         </div>
-
                     </div>
-                </div>
+                </fieldset>
 
-                <!-- Section 2: Jurisdiction & Verification Card -->
-                <div class="section-card">
-                    <h3 class="section-title">
-                        <span class="step-number">2</span> Jurisdiction & Verification Details
-                    </h3>
-                    <div class="input-grid">
-
-                        <div class="input-field">
-                            <label for="region">Assigned Region / District <span class="required">*</span></label>
-                            <input type="text" id="region" name="region" required
-                                placeholder="e.g. Feni, Sylhet, Noakhali">
+                <fieldset class="form-fieldset">
+                    <legend>2. Administrative Authorization & Jurisdiction</legend>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="region">Assigned Region / District *</label>
+                            <input type="text" id="region" name="region" required placeholder="e.g. Feni, Sylhet, Noakhali">
                         </div>
 
-                        <div class="input-field">
-                            <label>Gender Category <span class="required">*</span></label>
-                            <div class="radio-options">
-                                <label class="radio-item"><input type="radio" name="gender" value="male" checked>
-                                    Male</label>
-                                <label class="radio-item"><input type="radio" name="gender" value="female">
-                                    Female</label>
-                                <label class="radio-item"><input type="radio" name="gender" value="other"> Other</label>
+                        <div class="form-group">
+                            <label>Gender *</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gender" value="male" checked> Male</label>
+                                <label><input type="radio" name="gender" value="female"> Female</label>
+                                <label><input type="radio" name="gender" value="other"> Other</label>
                             </div>
                         </div>
 
-                        <div class="input-field">
-                            <label for="secret_key">Authorization Token / Secret Key <span
-                                    class="required">*</span></label>
-                            <input type="password" id="secret_key" name="secret_key" required
-                                placeholder="Enter Secret Security Token">
+                        <div class="form-group">
+                            <label for="secret_key">Authorization Token / Secret Passcode *</label>
+                            <input type="password" id="secret_key" name="secret_key" required placeholder="Enter secret key provided by IT">
                         </div>
 
-                        <div class="input-field">
-                            <label>Identity Document (NID / Passport) <span class="required">*</span></label>
-                            <div class="file-dropzone">
-                                <span class="upload-icon">📁</span>
-                                <span class="upload-text">Choose file or drag & drop here</span>
-                                <input type="file" id="id_proof" name="id_proof" required class="file-input-hidden">
-                            </div>
+                        <div class="form-group">
+                            <label for="id_proof">Identity Proof Document (NID/Passport) *</label>
+                            <input type="file" id="id_proof" name="id_proof" required class="file-input">
                         </div>
-
                     </div>
 
-                    <div class="input-field full-width">
-                        <label for="address">Administrative Office Address / Coordination Notes</label>
-                        <textarea id="address" name="address" rows="3"
-                            placeholder="Enter full administrative office location or special coordination notes..."></textarea>
+                    <div class="form-group full-width">
+                        <label for="address">Administrative Office Address & Notes</label>
+                        <textarea id="address" name="address" rows="3" placeholder="Enter full office address or emergency coordination notes..."></textarea>
                     </div>
-                </div>
+                </fieldset>
 
-                <!-- Form Action Buttons -->
-                <div class="action-bar">
-                    <button type="reset" class="btn btn-outline">Clear Fields</button>
-                    <button type="submit" class="btn btn-submit">
-                        Register Administrator <span class="btn-arrow">&rarr;</span>
-                    </button>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Register Administrator</button>
+                    <button type="reset" class="btn btn-secondary">Reset Form</button>
                 </div>
 
             </form>
         </div>
-
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2026 ReliefGrid Administrator Module | Department of CSE, AIUB</p>
     </footer>
 
 </body>
-
 </html>
