@@ -9,7 +9,6 @@
 body {
     background-color: #f4f7f9;
     color: #333333;
-    line-height: 1.6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -22,8 +21,9 @@ body {
     z-index: 1000;
 }
 
+/* Navbar Style */
 .navbar {
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -222,9 +222,8 @@ body {
 
 .form-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.25rem;
-    margin-top: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 1.25rem 2rem;
 }
 
 .form-group {
@@ -237,7 +236,7 @@ body {
 }
 
 .form-group label {
-    font-size: 15px;
+    font-size: 0.9rem;
     font-weight: 600;
     color: #495057;
     margin-bottom: 0.4rem;
@@ -250,61 +249,50 @@ body {
 .form-group input[type="password"],
 .form-group input[type="file"],
 .form-group textarea {
-    width: 100%;
-    padding: 0.7rem 0.85rem;
+    padding: 0.75rem;
     border: 1px solid #ced4da;
     border-radius: 6px;
     font-size: 0.95rem;
-    background-color: #ffffff;
     outline: none;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+.file-input {
+    background-color: #f8f9fa;
+    padding: 0.5rem !important;
 }
 
 .radio-group {
     display: flex;
-    gap: 1.25rem;
+    gap: 1.5rem;
     padding-top: 0.5rem;
 }
 
 .radio-group label {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
-    font-weight: 500;
-    cursor: pointer;
+    gap: 0.3rem;
 }
 
-/* Validation messages */
-.error-msg {
-    font-size: 0.82rem;
-    font-weight: 600;
-    margin-top: 0.3rem;
-}
-
-.success-msg {
-    margin-top: 1.25rem;
-    font-size: 1rem;
-    font-weight: 700;
-    text-align: center;
-}
-
-/* Action buttons */
+/* Action Buttons */
 .form-actions {
     display: flex;
-    gap: 15px;
+    gap: 1rem;
     justify-content: flex-end;
+    margin-top: 1rem;
 }
 
 .btn {
-    padding: 0.75rem 1.5rem;
+    padding: 0.8rem 2rem;
     border-radius: 6px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1rem;
     cursor: pointer;
     border: none;
     transition: background-color 0.2s ease;
