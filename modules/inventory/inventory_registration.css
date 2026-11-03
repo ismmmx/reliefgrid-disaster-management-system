@@ -38,12 +38,12 @@ a {
     color: #3182ce;
     text-decoration: none;
     font-weight: 600;
-    padding: 8px 16px;
+    padding: 30px 80px;
     border-radius: 20px;
     transition: all 0.3s ease;
 }
 a:hover {
-    background-color: #3182ce;
+
     color: #ffffff;
     box-shadow: 0 4px 10px rgba(49, 130, 206, 0.3);
 }
