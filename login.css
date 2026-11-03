@@ -1,4 +1,4 @@
-/* Reset & Typography */
+/* Universal reset */
 * {
     margin: 0;
     padding: 0;
@@ -8,13 +8,19 @@
 
 body {
     background-color: #f4f7f9;
-    color: #333;
+    color: #333333;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* Navbar */
+/* Sticky navbar */
+#login-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
 .navbar {
     background-color: #ffffff;
     display: flex;
@@ -38,12 +44,15 @@ body {
 }
 
 .nav-links a {
+    display: inline-block;
     text-decoration: none;
     color: #495057;
     margin-left: 1.5rem;
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 
+.nav-links a:hover,
 .nav-links a.active {
     color: #0d6efd;
 }
@@ -55,7 +64,11 @@ body {
     border-radius: 6px;
 }
 
-/* Login Layout */
+.btn-nav:hover {
+    background-color: #0b5ed7;
+}
+
+/* Login container and card */
 .login-wrapper {
     flex: 1;
     display: flex;
@@ -67,10 +80,12 @@ body {
 .login-card {
     background-color: #ffffff;
     width: 100%;
-    max-width: 450px;
+    max-width: 460px;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     padding: 2.5rem;
+    overflow: hidden;
+    position: relative;
 }
 
 .login-header h2 {
@@ -85,7 +100,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* Form Controls */
+/* Form fields */
 .form-group {
     margin-bottom: 1.25rem;
 }
@@ -106,13 +121,12 @@ body {
     border-radius: 6px;
     font-size: 0.95rem;
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.2s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     border-color: #0d6efd;
-    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
 }
 
 .checkbox-container {
@@ -123,6 +137,20 @@ body {
     color: #495057;
     cursor: pointer;
     margin-bottom: 1.5rem;
+}
+
+.error-msg {
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    font-weight: 600;
+}
+
+.success-msg {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
 }
 
 /* Buttons */
@@ -162,7 +190,7 @@ body {
     background-color: #e9ecef;
 }
 
-/* Footer Link */
+/* Footer */
 .login-footer {
     margin-top: 2rem;
     padding-top: 1.25rem;
