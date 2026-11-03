@@ -30,7 +30,7 @@
 
     <br>
 
-    <form action="../../login.html" method="POST">
+    <form action="../../login.html" method="POST" onsubmit="return validation()">
         
         <fieldset>
             <legend><b>1. Personal & Contact Details</b></legend>
@@ -38,38 +38,45 @@
             <table border="0" cellpadding="8" align="center" width="90%">
                 <tr>
                     <td><label for="fullname">Full Name:</label></td>
-                    <td><input type="text" id="fullname" name="fullname" placeholder="e.g. Sanjida Affrin " required></td>
+                    <td><input type="text" id="fullname" name="fullname" placeholder="e.g. Sanjida Affrin "  onkeyup="nameerrorfunc()"><br>
+                        <small id="nameerror"></small>
+                    </td>
                     
                     <td><label for="dob">Date of Birth:</label></td>
-                    <td><input type="date" id="dob" name="dob" required></td>
+                    <td><input type="date" id="dob" name="dob"  onchange="dobfunc()"><br>
+                        <small id="doberror"></small>
+                    </td>
                 </tr>
                 <tr>
                     <td><label for="gender">Gender:</label></td>
                     <td>
-                        <select id="gender" name="gender" required>
+                        <select id="gender" name="gender"  onchange="genderfunc()">
                             <option value="" disabled selected>-- Select Gender --</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="other">Other</option>
-                        </select>
+                        </select><br>
+                        <small id="gendererror"></small>
+
                     </td>
 
                     <td><label for="religion">Religion:</label></td>
                     <td>
-                        <select id="religion" name="religion" required>
+                        <select id="religion" name="religion"  onchange="religionfunc()">
                             <option value="" disabled selected>-- Select Religion --</option>
                             <option value="islam">Islam</option>
                             <option value="hinduism">Hinduism</option>
                             <option value="buddhism">Buddhism</option>
                             <option value="christianity">Christianity</option>
                             <option value="others">Others</option>
-                        </select>
+                        </select><br>
+                        <small id="religionerror"></small>
                     </td>
                 </tr>
                 <tr>
                     <td><label for="blood_group">Blood Group:</label></td>
                     <td>
-                        <select id="blood_group" name="blood_group" required>
+                        <select id="blood_group" name="blood_group"  onchange="bloodfunc()">
                             <option value="" disabled selected>-- Select Blood Group --</option>
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
@@ -79,15 +86,20 @@
                             <option value="O-">O-</option>
                             <option value="AB+">AB+</option>
                             <option value="AB-">AB-</option>
-                        </select>
+                        </select><br>
+                        <small id="blooderror"></small>
                     </td>
 
                     <td><label for="phone">Phone Number:</label></td>
-                    <td><input type="tel" id="phone" name="phone" placeholder="e.g. +8801700000000" required></td>
+                    <td><input type="tel" id="phone" name="phone" placeholder="e.g. 01700000000" onkeyup="phonefunc()"><br>
+                        <small id="phoneerror"></small>
+                    </td>
                 </tr>
                 <tr>
                     <td><label for="nid">NID / National ID:</label></td>
-                    <td colspan="3"><input type="text" id="nid" name="nid" placeholder="Enter NID Number" required></td>
+                    <td colspan="3"><input type="text" id="nid" name="nid" placeholder="Enter NID Number"  onkeyup="nidfunc()">
+                        <small id="niderror"></small>
+                    </td>
                 </tr>
             </table>
         </fieldset>
@@ -100,14 +112,20 @@
             <table border="0" cellpadding="8" align="center" width="90%">
                 <tr>
                     <td><label for="empid">Employee / Staff ID:</label></td>
-                    <td><input type="text" id="empid" name="empid" placeholder="e.g. INV-2026-001" required></td>
+                    <td><input type="text" id="empid" name="empid" placeholder="e.g. INV-2026-001"  onkeyup="empidfunc()"><br>
+                        <small id="empiderror"></small>
+                    </td>
                     
                     <td><label for="warehouse">Assigned Warehouse:</label></td>
-                    <td><input type="text" id="warehouse" name="warehouse" placeholder="e.g. Central Warehouse, Sylhet" required></td>
+                    <td><input type="text" id="warehouse" name="warehouse" placeholder="e.g. Central Warehouse, Sylhet"  onkeyup="warehousefunc()"><br>
+                        <small id="warehouseerror"></small>
+                    </td>
                 </tr>
                 <tr>
                     <td><label for="region">Assigned District / Division:</label></td>
-                    <td><input type="text" id="region" name="region" placeholder="e.g. Sylhet Sadar" required></td>
+                    <td><input type="text" id="region" name="region" placeholder="e.g. Sylhet Sadar"  onkeyup="regionfunc()"><br>
+                        <small id="regionerror"></small>
+                    </td>
                     
                     <td><label for="shift">Duty Shift:</label></td>
                     <td>
@@ -129,14 +147,20 @@
             <table border="0" cellpadding="8" align="center" width="90%">
                 <tr>
                     <td><label for="email">User Email Address:</label></td>
-                    <td colspan="3"><input type="email" id="email" name="email" placeholder="example@domain.com" required size="30"></td>
+                    <td colspan="3"><input type="email" id="email" name="email" placeholder="example@domain.com"  size="30" onkeyup="emailerrorfunc()"><br>
+                        <small id="emailerror"></small>
+                    </td>
                 </tr>
                 <tr>
                     <td><label for="password">Set Password:</label></td>
-                    <td><input type="password" id="password" name="password" placeholder="Enter password" required></td>
+                    <td><input type="password" id="password" name="password" placeholder="Enter password"  onkeyup="passcheckfunc()"><br>
+                        <small id="passerror"></small>
+                    </td>
 
                     <td><label for="confirm_password">Confirm Password:</label></td>
-                    <td><input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter password" required></td>
+                    <td><input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter password"  onkeyup="confirmpassfunc()"><br>
+                        <small id="confirmpasserror"></small>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="4" align="center">
@@ -161,6 +185,7 @@
             </td>
         </tr>
     </table>
+    <script src="inventory_registration.js"></script>
 
 </body>
 </html>
