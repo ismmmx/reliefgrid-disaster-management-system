@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReliefGrid - Flood Relief & Disaster Management System</title>
+    <!-- External CSS connection -->
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
-    <!-- Header Navigation Bar -->
-    <header class="navbar">
+    <header class="navbar" id="main-navbar">
         <div class="logo-container">
             <h1 class="logo-title">ReliefGrid</h1>
             <span class="logo-sub">Disaster Management</span>
@@ -24,12 +24,10 @@
         </nav>
     </header>
 
-    <!-- Hero Banner Section -->
     <section class="hero-section">
         <div class="hero-content">
             <h2>Flood Relief & Disaster Management System</h2>
-            <p>A centralized platform driving rapid response, shelter tracking, resource inventory, and emergency aid
-                during flood crises.</p>
+            <p>A centralized platform driving rapid response, shelter tracking, resource inventory, and emergency aid during flood crises.</p>
             <div class="hero-buttons">
                 <a href="login.html" class="btn btn-primary">Login to Portal</a>
                 <a href="#register-section" class="btn btn-secondary">Select Department Role</a>
@@ -37,23 +35,18 @@
         </div>
     </section>
 
-    <!-- Main Content Container -->
     <main class="container">
 
-        <!-- About Section -->
         <section id="about" class="card">
             <div class="card-header">
                 <h3>About ReliefGrid Platform</h3>
             </div>
             <div class="card-body">
-                <p>Welcome to <strong>ReliefGrid</strong>. Our system simplifies coordinate workflows between field
-                    teams, emergency victims, shelter managers, and inventory handlers.</p>
-                <p>If you are an assigned coordinator or need urgent aid, please register under your specific module
-                    below or log in to your account.</p>
+                <p>Welcome to <strong>ReliefGrid</strong>. Our system simplifies coordination workflows between field teams, emergency victims, shelter managers, and inventory handlers.</p>
+                <p>Active System Modules: <strong id="moduleList"></strong></p>
             </div>
         </section>
 
-        <!-- Department Role Registration Grid -->
         <section id="register-section" class="card">
             <div class="card-header">
                 <h3>System Department Portals</h3>
@@ -62,33 +55,59 @@
             <div class="card-body">
                 <div class="role-grid">
                     <div class="role-card">
-                        <h4>1. System Admin</h4>
-                        <p>Central management, policy enforcement, and platform oversight.</p>
+                        <div>
+                            <h4>1. System Admin</h4>
+                            <p>Central management, policy enforcement, and platform oversight.</p>
+                        </div>
                         <a href="modules/admin/admin_registration.html" class="btn btn-role">Admin Registration</a>
                     </div>
                     <div class="role-card">
-                        <h4>2. Shelter Manager</h4>
-                        <p>Shelter tracking, capacity monitoring, and volunteer assignment.</p>
-                        <a href="modules/shelter/shelter_registration.html" class="btn btn-role">Shelter
-                            Registration</a>
+                        <div>
+                            <h4>2. Shelter Manager</h4>
+                            <p>Shelter tracking, capacity monitoring, and volunteer assignment.</p>
+                        </div>
+                        <a href="modules/shelter/shelter_registration.html" class="btn btn-role">Shelter Registration</a>
                     </div>
                     <div class="role-card">
-                        <h4>3. Inventory Handler</h4>
-                        <p>Stock management, donation tracking, and supply distribution.</p>
-                        <a href="modules/inventory/inventory_registration.html" class="btn btn-role">Inventory
-                            Registration</a>
+                        <div>
+                            <h4>3. Inventory Handler</h4>
+                            <p>Stock management, donation tracking, and supply distribution.</p>
+                        </div>
+                        <a href="modules/inventory/inventory_registration.html" class="btn btn-role">Inventory Registration</a>
                     </div>
                     <div class="role-card">
-                        <h4>4. Emergency Victim</h4>
-                        <p>Direct aid requests, emergency alerts, and rescue assistance.</p>
-                        <a href="modules/emergency/emergency_registration.html" class="btn btn-role">Emergency
-                            Request</a>
+                        <div>
+                            <h4>4. Emergency Victim</h4>
+                            <p>Direct aid requests, emergency alerts, and rescue assistance.</p>
+                        </div>
+                        <a href="modules/emergency/emergency_registration.html" class="btn btn-role">Emergency Request</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Emergency Hotline Bar -->
+        <section id="role-helper" class="card">
+            <div class="card-header">
+                <h3>Check Department Role Responsibilities</h3>
+            </div>
+            <div class="card-body">
+                <label for="roleSelect" class="helper-label">Select a user category to view permissions:</label>
+                <div class="helper-controls">
+                    <!-- Function activation using onchange -->
+                    <select id="roleSelect" class="helper-select" onchange="showRoleDetails()">
+                        <option value="">-- Choose a Category --</option>
+                        <option value="admin">System Admin</option>
+                        <option value="shelter">Shelter Manager</option>
+                        <option value="inventory">Inventory Handler</option>
+                        <option value="emergency">Emergency Victim</option>
+                    </select>
+                    <!-- Function activation using onclick -->
+                    <button type="button" class="btn btn-check" onclick="showRoleDetails()">Show Details</button>
+                </div>
+                <p id="roleInfoMessage" class="info-message"></p>
+            </div>
+        </section>
+
         <div class="hotline-banner">
             <span class="hotline-icon">🚨</span>
             <div class="hotline-text">
@@ -99,12 +118,13 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 ReliefGrid Team | Group 4 (CSC 3215 Web Tech Project)</p>
+        <p>© 2026 ReliefGrid Team | Group 4 (CSC 3215 Web Tech Project)</p>
         <p>Department of CSE, AIUB</p>
     </footer>
 
+    <!-- External JavaScript connection -->
+    <script src="index.js"></script>
 </body>
 
 </html>
