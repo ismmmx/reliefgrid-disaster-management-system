@@ -14,7 +14,7 @@
     <header class="navbar" id="admin-navbar">
         <div class="logo-container">
             <h1 class="logo-title">ReliefGrid</h1>
-            <span class="logo-sub">Admin Registration Portal</span>
+            <span class="logo-sub">System Administrator Portal</span>
         </div>
         <nav class="nav-links">
             <a href="../../index.html" class="btn-nav-outline">Go to Home Page</a>
@@ -22,11 +22,27 @@
         </nav>
     </header>
 
-    <main class="container">
-        <div class="registration-card">
-            <div class="card-title-bar">
-                <h2>System Administrator Account Registration</h2>
-                <p>Authorized access portal for disaster response management personnel</p>
+    <!-- Wide Page Layout: Side Bar + Main Registration Bar -->
+    <div class="page-layout">
+
+        <!-- Left Side Bar: Admin Verification Checklist & Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <div class="sidebar-header">
+                    <h3>Admin Verification Rules</h3>
+                </div>
+                <div class="sidebar-body">
+                    <p>All administrator accounts require strict validation before activation:</p>
+                    <ul class="rule-list">
+                        <li><strong>Full Name:</strong> Alphabets and spaces only.</li>
+                        <li><strong>Phone:</strong> Valid 11-digit BD number (<code>01XXXXXXXXX</code>).</li>
+                        <li><strong>Age Limit:</strong> Minimum 18 years old.</li>
+                        <li><strong>Password:</strong> Min 6 characters including 1 number.</li>
+                        <li><strong>Secret Token:</strong> Must start with <code>ADMIN</code> (e.g. <code>ADMIN123</code>).</li>
+                        <li><strong>ID Document:</strong> Upload <code>.pdf</code>, <code>.jpg</code>, or <code>.png</code> file.</li>
+                        <li><strong>Office Address:</strong> At least 10 characters long.</li>
+                    </ul>
+                </div>
             </div>
 
             <!-- Function activation using onsubmit and onreset -->
@@ -91,6 +107,25 @@
                                 <label for="genderOther"><input type="radio" id="genderOther" name="gender" value="Other"> Other</label>
                             </div>
                         </div>
+                    </fieldset>
+
+                    <fieldset class="form-fieldset">
+                        <legend>2. Administrative Authorization &amp; Jurisdiction</legend>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="region">Assigned Region / District *</label>
+                                <input type="text" id="region" name="region" placeholder="e.g. Feni, Sylhet, Noakhali">
+                                <span id="regionError" class="error-msg"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Gender *</label>
+                                <div class="radio-group">
+                                    <label for="genderMale"><input type="radio" id="genderMale" name="gender" value="Male" checked> Male</label>
+                                    <label for="genderFemale"><input type="radio" id="genderFemale" name="gender" value="Female"> Female</label>
+                                    <label for="genderOther"><input type="radio" id="genderOther" name="gender" value="Other"> Other</label>
+                                </div>
+                            </div>
 
                         <div class="form-group">
                             <label for="secret_key">Authorization Token (Start with ADMIN) *</label>
@@ -104,19 +139,15 @@
                             <input type="file" id="id_proof" name="id_proof" class="file-input" onchange="checkFile()">
                             <span id="fileError" class="error-msg"></span>
                         </div>
-                    </div>
+                    </fieldset>
 
                     <div class="form-group full-width">
                         <label for="address">Administrative Office Address & Notes *</label>
                         <textarea id="address" name="address" rows="3" style="resize:none" placeholder="Enter full office address (minimum 10 characters)..."></textarea>
                         <span id="addressError" class="error-msg"></span>
                     </div>
-                </fieldset>
 
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Register Administrator</button>
-                    <button type="reset" class="btn btn-secondary">Reset Form</button>
-                </div>
+                    <p id="regSuccess" class="success-msg"></p>
 
                 <p id="regSuccess" class="success-msg"></p>
 
@@ -124,6 +155,9 @@
         </div>
     </main>
 
+    </div>
+
+    <!-- Bottom Bar: Footer -->
     <footer class="footer">
         <p>&copy; 2026 ReliefGrid Administrator Module | Department of CSE, AIUB</p>
     </footer>

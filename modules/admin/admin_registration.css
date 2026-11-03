@@ -38,8 +38,8 @@ body {
 }
 
 .logo-sub {
-    font-size: 0.85rem;
-    color: #6c757d;
+    font-size: 0.82rem;
+    color: #64748b;
     display: block;
     margin-top: -4px;
 }
@@ -87,8 +87,96 @@ body {
     flex: 1;
 }
 
+.sidebar {
+    width: 27%;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.main-bar {
+    width: 73%;
+    flex: 1;
+}
+
+/* Sidebar Cards */
+.sidebar-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    overflow: hidden;
+}
+
+.sidebar-header {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 0.9rem 1.25rem;
+}
+
+.sidebar-header h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.sidebar-body {
+    padding: 1.2rem 1.25rem;
+    font-size: 0.88rem;
+    color: #475569;
+}
+
+.rule-list {
+    margin-top: 0.75rem;
+    padding-left: 1.1rem;
+}
+
+.rule-list li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0.4rem 0;
+}
+
+.sidebar-menu li a {
+    display: block;
+    padding: 0.65rem 1.25rem;
+    color: #334155;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active-portal {
+    background-color: #f0fdfa;
+    color: #0f766e;
+    font-weight: 700;
+}
+
+.support-box {
+    background-color: #ffffff;
+    border-left: 4px solid #0f766e;
+    padding: 1.15rem 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    font-size: 0.88rem;
+    color: #475569;
+}
+
+.support-box h4 {
+    color: #0f172a;
+    margin-bottom: 0.3rem;
+}
+
+/* Main Registration Card */
 .registration-card {
     background-color: #ffffff;
+    border: 1px solid #e2e8f0;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     overflow: hidden;
@@ -205,10 +293,7 @@ body {
     text-align: center;
 }
 
-<<<<<<< HEAD
 /* Action buttons */
-=======
->>>>>>> c7b72cc208da9c0d4d22f4ccbf579deff4b6356a
 .form-actions {
     display: flex;
     gap: 15px;
