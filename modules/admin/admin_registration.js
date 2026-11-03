@@ -16,18 +16,20 @@ function clearAdminErrors() {
     ];
 
     for (let j = 0; j < inputIds.length; j++) {
-        document.getElementById(inputIds[j]).style.border = "1px solid #cbd5e1";
+        document.getElementById(inputIds[j]).style.border = "1px solid #ced4da";
     }
 }
 
 // Function activated by onchange="checkFile()" on file input
 function checkFile() {
-    document.getElementById("fileError").innerHTML = "";
-    document.getElementById("id_proof").style.border = "1px solid #cbd5e1";
+    let fileMsg = document.getElementById("fileError");
+    fileMsg.innerHTML = "";
+    document.getElementById("id_proof").style.border = "1px solid #ced4da";
 }
 
 // Main validation function activated by onsubmit="return validateAdminForm()"
 function validateAdminForm() {
+    // Activate clear function first
     clearAdminErrors();
 
     let fullname = document.getElementById("fullname").value.trim();
@@ -43,7 +45,7 @@ function validateAdminForm() {
 
     let isValid = true;
 
-    // Regular expressions
+    // Regular expressions (JS Task 3 Requirement 6)
     let namePattern = /^[A-Za-z\s.]+$/;
     let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let phonePattern = /^01[0-9]{9}$/;
@@ -54,14 +56,14 @@ function validateAdminForm() {
     if (fullname === "") {
         let err = document.getElementById("nameError");
         err.innerHTML = "Name cannot be empty";
-        err.style.color = "#dc2626";
-        document.getElementById("fullname").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("fullname").style.border = "2px solid red";
         isValid = false;
     } else if (!namePattern.test(fullname)) {
         let err = document.getElementById("nameError");
         err.innerHTML = "Name should contain only letters";
-        err.style.color = "#dc2626";
-        document.getElementById("fullname").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("fullname").style.border = "2px solid red";
         isValid = false;
     }
 
@@ -69,29 +71,29 @@ function validateAdminForm() {
     if (email === "") {
         let err = document.getElementById("emailError");
         err.innerHTML = "Email cannot be empty";
-        err.style.color = "#dc2626";
-        document.getElementById("email").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("email").style.border = "2px solid red";
         isValid = false;
     } else if (!emailPattern.test(email)) {
         let err = document.getElementById("emailError");
         err.innerHTML = "Enter a valid email address";
-        err.style.color = "#dc2626";
-        document.getElementById("email").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("email").style.border = "2px solid red";
         isValid = false;
     }
 
-    // 3. Phone validation
+    // 3. Phone number validation
     if (phone === "") {
         let err = document.getElementById("phoneError");
         err.innerHTML = "Phone number cannot be empty";
-        err.style.color = "#dc2626";
-        document.getElementById("phone").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("phone").style.border = "2px solid red";
         isValid = false;
     } else if (!phonePattern.test(phone)) {
         let err = document.getElementById("phoneError");
         err.innerHTML = "Enter a valid 11-digit number (01XXXXXXXXX)";
-        err.style.color = "#dc2626";
-        document.getElementById("phone").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("phone").style.border = "2px solid red";
         isValid = false;
     }
 
@@ -99,14 +101,14 @@ function validateAdminForm() {
     if (password === "") {
         let err = document.getElementById("passwordError");
         err.innerHTML = "Password cannot be empty";
-        err.style.color = "#dc2626";
-        document.getElementById("password").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("password").style.border = "2px solid red";
         isValid = false;
     } else if (password.length < 6 || !numberPattern.test(password)) {
         let err = document.getElementById("passwordError");
         err.innerHTML = "Password is too weak";
-        err.style.color = "#dc2626";
-        document.getElementById("password").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("password").style.border = "2px solid red";
         isValid = false;
     }
 
@@ -114,14 +116,14 @@ function validateAdminForm() {
     if (confirmPassword === "") {
         let err = document.getElementById("confirmPasswordError");
         err.innerHTML = "Please confirm your password";
-        err.style.color = "#dc2626";
-        document.getElementById("confirm_password").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("confirm_password").style.border = "2px solid red";
         isValid = false;
     } else if (password !== confirmPassword) {
         let err = document.getElementById("confirmPasswordError");
         err.innerHTML = "Passwords do not match";
-        err.style.color = "#dc2626";
-        document.getElementById("confirm_password").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("confirm_password").style.border = "2px solid red";
         isValid = false;
     }
 
@@ -129,8 +131,8 @@ function validateAdminForm() {
     if (dob === "") {
         let err = document.getElementById("dobError");
         err.innerHTML = "Date of birth is required";
-        err.style.color = "#dc2626";
-        document.getElementById("dob").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("dob").style.border = "2px solid red";
         isValid = false;
     } else {
         let birthYear = new Date(dob).getFullYear();
@@ -138,8 +140,8 @@ function validateAdminForm() {
         if (currentYear - birthYear < 18) {
             let err = document.getElementById("dobError");
             err.innerHTML = "Admin must be at least 18 years old";
-            err.style.color = "#dc2626";
-            document.getElementById("dob").style.border = "2px solid #dc2626";
+            err.style.color = "red";
+            document.getElementById("dob").style.border = "2px solid red";
             isValid = false;
         }
     }
@@ -148,8 +150,8 @@ function validateAdminForm() {
     if (region === "" || region.length < 3 || !regionPattern.test(region)) {
         let err = document.getElementById("regionError");
         err.innerHTML = "Enter a valid region name (letters only)";
-        err.style.color = "#dc2626";
-        document.getElementById("region").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("region").style.border = "2px solid red";
         isValid = false;
     }
 
@@ -157,25 +159,25 @@ function validateAdminForm() {
     if (secretKey === "" || !secretKey.startsWith("ADMIN") || secretKey.length < 6) {
         let err = document.getElementById("secretKeyError");
         err.innerHTML = "Token must start with ADMIN (e.g. ADMIN123)";
-        err.style.color = "#dc2626";
-        document.getElementById("secret_key").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("secret_key").style.border = "2px solid red";
         isValid = false;
     }
 
-    // 9. Unique Rule 4: Identity Proof File (PDF, JPG, or PNG)
+    // 9. Unique Rule 4: Identity Proof File (must be PDF, JPG, or PNG)
     if (idProof === "") {
         let err = document.getElementById("fileError");
         err.innerHTML = "Please upload your identity document";
-        err.style.color = "#dc2626";
-        document.getElementById("id_proof").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("id_proof").style.border = "2px solid red";
         isValid = false;
     } else {
         let fileLower = idProof.toLowerCase();
         if (!fileLower.endsWith(".pdf") && !fileLower.endsWith(".jpg") && !fileLower.endsWith(".png")) {
             let err = document.getElementById("fileError");
             err.innerHTML = "Only PDF, JPG, or PNG files are allowed";
-            err.style.color = "#dc2626";
-            document.getElementById("id_proof").style.border = "2px solid #dc2626";
+            err.style.color = "red";
+            document.getElementById("id_proof").style.border = "2px solid red";
             isValid = false;
         }
     }
@@ -184,18 +186,20 @@ function validateAdminForm() {
     if (address === "" || address.length < 10) {
         let err = document.getElementById("addressError");
         err.innerHTML = "Office address must be at least 10 characters";
-        err.style.color = "#dc2626";
-        document.getElementById("address").style.border = "2px solid #dc2626";
+        err.style.color = "red";
+        document.getElementById("address").style.border = "2px solid red";
         isValid = false;
     }
 
+    // Prevent submission if any validation failed
     if (isValid === false) {
         return false;
     }
 
+    // Display success message using innerHTML
     let successBox = document.getElementById("regSuccess");
     successBox.innerHTML = "Registration Successful!";
-    successBox.style.color = "#0f766e";
+    successBox.style.color = "green";
     console.log("Registered Admin: " + fullname);
     return true;
 }

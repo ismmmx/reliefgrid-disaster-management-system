@@ -11,7 +11,6 @@
 
 <body>
 
-    <!-- Top Bar: Header and Navigation -->
     <header class="navbar" id="admin-navbar">
         <div class="logo-container">
             <h1 class="logo-title">ReliefGrid</h1>
@@ -46,73 +45,66 @@
                 </div>
             </div>
 
-            <div class="sidebar-card">
-                <div class="sidebar-header">
-                    <h3>Switch Department Portal</h3>
-                </div>
-                <ul class="sidebar-menu">
-                    <li><a href="admin_registration.html" class="active-portal">1. System Admin (Current)</a></li>
-                    <li><a href="../shelter/shelter_registration.html">2. Shelter Manager Portal</a></li>
-                    <li><a href="../inventory/inventory_registration.html">3. Inventory Handler Portal</a></li>
-                    <li><a href="../emergency/emergency_registration.html">4. Emergency Victim Portal</a></li>
-                </ul>
-            </div>
+            <!-- Function activation using onsubmit and onreset -->
+            <form name="adminForm" id="adminForm" action="javascript:void(0);" method="post"
+                  onsubmit="return validateAdminForm()" onreset="clearAdminErrors()" class="admin-form" novalidate>
 
-            <div class="support-box">
-                <h4>IT Authorization Desk</h4>
-                <p>For secret passcode tokens, contact Central IT Wing at <strong>it-support@reliefgrid.org</strong></p>
-            </div>
-        </aside>
+                <fieldset class="form-fieldset">
+                    <legend>1. Personal & Account Credentials</legend>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullname">Full Name *</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="e.g. Ishmam Mubtasim">
+                            <span id="nameError" class="error-msg"></span>
+                        </div>
 
-        <!-- Right Main Bar: Wide Registration Card -->
-        <main class="main-bar">
-            <div class="registration-card">
-                <div class="card-title-bar">
-                    <h2>System Administrator Account Registration</h2>
-                    <p>Authorized access portal for disaster response management personnel</p>
-                </div>
+                        <div class="form-group">
+                            <label for="email">Official Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="admin@reliefgrid.org">
+                            <span id="emailError" class="error-msg"></span>
+                        </div>
 
-                <!-- Function activation using onsubmit and onreset -->
-                <form name="adminForm" id="adminForm" action="javascript:void(0);" method="post"
-                      onsubmit="return validateAdminForm()" onreset="clearAdminErrors()" class="admin-form" novalidate>
+                        <div class="form-group">
+                            <label for="phone">Contact Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="017XXXXXXXX">
+                            <span id="phoneError" class="error-msg"></span>
+                        </div>
 
-                    <fieldset class="form-fieldset">
-                        <legend>1. Personal &amp; Account Credentials</legend>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="fullname">Full Name *</label>
-                                <input type="text" id="fullname" name="fullname" placeholder="e.g. Ishmam Mubtasim">
-                                <span id="nameError" class="error-msg"></span>
-                            </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth (Min 18 Years) *</label>
+                            <input type="date" id="dob" name="dob">
+                            <span id="dobError" class="error-msg"></span>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="email">Official Email Address *</label>
-                                <input type="email" id="email" name="email" placeholder="admin@reliefgrid.org">
-                                <span id="emailError" class="error-msg"></span>
-                            </div>
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <input type="password" id="password" name="password" placeholder="Min 6 chars with 1 number">
+                            <span id="passwordError" class="error-msg"></span>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="phone">Contact Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" placeholder="017XXXXXXXX">
-                                <span id="phoneError" class="error-msg"></span>
-                            </div>
+                        <div class="form-group">
+                            <label for="confirm_password">Confirm Password *</label>
+                            <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter password">
+                            <span id="confirmPasswordError" class="error-msg"></span>
+                        </div>
+                    </div>
+                </fieldset>
 
-                            <div class="form-group">
-                                <label for="dob">Date of Birth (Min 18 Years) *</label>
-                                <input type="date" id="dob" name="dob">
-                                <span id="dobError" class="error-msg"></span>
-                            </div>
+                <fieldset class="form-fieldset">
+                    <legend>2. Administrative Authorization & Jurisdiction</legend>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="region">Assigned Region / District *</label>
+                            <input type="text" id="region" name="region" placeholder="e.g. Feni, Sylhet, Noakhali">
+                            <span id="regionError" class="error-msg"></span>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="password">Password *</label>
-                                <input type="password" id="password" name="password" placeholder="Min 6 chars with 1 number">
-                                <span id="passwordError" class="error-msg"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="confirm_password">Confirm Password *</label>
-                                <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter password">
-                                <span id="confirmPasswordError" class="error-msg"></span>
+                        <div class="form-group">
+                            <label>Gender *</label>
+                            <div class="radio-group">
+                                <label for="genderMale"><input type="radio" id="genderMale" name="gender" value="Male" checked> Male</label>
+                                <label for="genderFemale"><input type="radio" id="genderFemale" name="gender" value="Female"> Female</label>
+                                <label for="genderOther"><input type="radio" id="genderOther" name="gender" value="Other"> Other</label>
                             </div>
                         </div>
                     </fieldset>
@@ -135,37 +127,33 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="secret_key">Authorization Token (Start with ADMIN) *</label>
-                                <input type="password" id="secret_key" name="secret_key" placeholder="e.g. ADMIN123">
-                                <span id="secretKeyError" class="error-msg"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="id_proof">Identity Proof Document (PDF/JPG/PNG) *</label>
-                                <!-- Function activation using onchange -->
-                                <input type="file" id="id_proof" name="id_proof" class="file-input" onchange="checkFile()">
-                                <span id="fileError" class="error-msg"></span>
-                            </div>
+                        <div class="form-group">
+                            <label for="secret_key">Authorization Token (Start with ADMIN) *</label>
+                            <input type="password" id="secret_key" name="secret_key" placeholder="e.g. ADMIN123">
+                            <span id="secretKeyError" class="error-msg"></span>
                         </div>
 
-                        <div class="form-group full-width">
-                            <label for="address">Administrative Office Address &amp; Notes *</label>
-                            <textarea id="address" name="address" rows="3" style="resize:none" placeholder="Enter full regional office address and emergency coordination notes (minimum 10 characters)..."></textarea>
-                            <span id="addressError" class="error-msg"></span>
+                        <div class="form-group">
+                            <label for="id_proof">Identity Proof Document (PDF/JPG/PNG) *</label>
+                            <!-- Function activation using onchange -->
+                            <input type="file" id="id_proof" name="id_proof" class="file-input" onchange="checkFile()">
+                            <span id="fileError" class="error-msg"></span>
                         </div>
                     </fieldset>
 
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Register Administrator</button>
-                        <button type="reset" class="btn btn-secondary">Reset Form</button>
+                    <div class="form-group full-width">
+                        <label for="address">Administrative Office Address & Notes *</label>
+                        <textarea id="address" name="address" rows="3" style="resize:none" placeholder="Enter full office address (minimum 10 characters)..."></textarea>
+                        <span id="addressError" class="error-msg"></span>
                     </div>
 
                     <p id="regSuccess" class="success-msg"></p>
 
-                </form>
-            </div>
-        </main>
+                <p id="regSuccess" class="success-msg"></p>
+
+            </form>
+        </div>
+    </main>
 
     </div>
 
