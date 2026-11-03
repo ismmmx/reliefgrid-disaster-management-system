@@ -1,4 +1,3 @@
-// Function to clear login messages and borders
 function clearLoginErrors() {
     document.getElementById("emailError").innerHTML = "";
     document.getElementById("passwordError").innerHTML = "";
@@ -10,9 +9,7 @@ function clearLoginErrors() {
     document.getElementById("role").style.border = "1px solid #ced4da";
 }
 
-// Function activated by onsubmit="return validateLogin()" in login.html
 function validateLogin() {
-    // Activate helper function to clear previous messages
     clearLoginErrors();
 
     let emailInput = document.getElementById("email");
@@ -41,7 +38,7 @@ function validateLogin() {
         isValid = false;
     }
 
-    // Check password (not empty and at least 6 characters)
+    // Check password 
     if (password === "") {
         let err = document.getElementById("passwordError");
         err.innerHTML = "Password field cannot be empty";
@@ -65,12 +62,10 @@ function validateLogin() {
         isValid = false;
     }
 
-    // Stop form submission if any error exists (Week 06 Slide 24-25)
     if (isValid === false) {
         return false;
     }
 
-    // Show success message using innerHTML
     let successMsg = document.getElementById("loginSuccess");
     successMsg.innerHTML = "Login Successful!";
     successMsg.style.color = "green";
