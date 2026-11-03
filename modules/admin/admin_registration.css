@@ -23,7 +23,7 @@ body {
 }
 
 .navbar {
-    background-color: #ffffff;
+    background-color: #f2f2f2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -149,7 +149,7 @@ body {
 }
 
 .form-group label {
-    font-size: 0.9rem;
+    font-size: 15px;
     font-weight: 600;
     color: #495057;
     margin-bottom: 0.4rem;
@@ -205,10 +205,13 @@ body {
     text-align: center;
 }
 
+<<<<<<< HEAD
 /* Action buttons */
+=======
+>>>>>>> c7b72cc208da9c0d4d22f4ccbf579deff4b6356a
 .form-actions {
     display: flex;
-    gap: 1rem;
+    gap: 15px;
     justify-content: flex-end;
 }
 
