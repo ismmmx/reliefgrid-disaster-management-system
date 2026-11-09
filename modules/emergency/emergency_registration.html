@@ -1,55 +1,180 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Victim Registration - ReliefGrid</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReliefGrid - Emergency Victim Registration</title>
+    <link rel="stylesheet" href="victim_registration.css">
 </head>
 <body>
 
-<h2>Victim Registration Form</h2>
+    <!-- Header Section -->
+    <table border="1" width="100%" cellpadding="10">
+        <tr>
+            <td align="center">
+                <h1>ReliefGrid</h1>
+                <h3>Emergency Request / Victim Registration</h3>
+            </td>
+        </tr>
+    </table>
 
-<form>
-  <label for="fullname">Full Name:</label><br>
-  <input type="text" id="fullname" name="fullname"><br><br>
+    <br>
 
-  <label for="phone">Contact / Mobile Number:</label><br>
-  <input type="tel" id="phone" name="phone"><br><br>
+    <!-- Navigation Bar -->
+    <table border="1" width="100%" cellpadding="8">
+        <tr>
+            <td align="center">
+                <a href="../../index.html"><button type="button">Go to Home Page</button></a> | 
+                <a href="../../login.html"><button type="button">Go to Login Page</button></a>
+            </td>
+        </tr>
+    </table>
 
-  <label for="email">Email Address:</label><br>
-  <input type="email" id="email" name="email"><br><br>
+    <br>
 
-  <label for="password">Password:</label><br>
-  <input type="password" id="password" name="password"><br><br>
+    <!-- Registration Form -->
+    <form id="victimForm" action="../../login.html" method="POST" onsubmit="return validateForm()">
+        
+        <!-- Section 1: Victim Personal Details -->
+        <fieldset>
+            <legend><b>1. Victim Personal Details</b></legend>
+            <br>
+            <table border="0" cellpadding="8" align="center" width="90%">
+                <tr>
+                    <td><label for="fullname">Full Name:</label></td>
+                    <td><input type="text" id="fullname" name="fullname" placeholder="e.g. Progma Hossain" required></td>
+                    
+                    <td><label for="dob">Date of Birth:</label></td>
+                    <td><input type="date" id="dob" name="dob" required></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender:</label></td>
+                    <td>
+                        <select id="gender" name="gender" required>
+                            <option value="" disabled selected>-- Select Gender --</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </td>
 
-  <label for="location">Current Location / Flood-Affected Area:</label><br>
-  <input type="text" id="location" name="location"><br><br>
+                    <td><label for="blood_group">Blood Group:</label></td>
+                    <td>
+                        <select id="blood_group" name="blood_group" required>
+                            <option value="" disabled selected>-- Select Blood Group --</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Contact Phone Number:</label></td>
+                    <td><input type="tel" id="phone" name="phone" placeholder="e.g. +8801700000000" required></td>
 
-  <label for="familysize">Family Size / Number of Dependents:</label><br>
-  <input type="number" id="familysize" name="familysize"><br><br>
+                    <td><label for="nid">NID / Birth Cert No:</label></td>
+                    <td><input type="text" id="nid" name="nid" placeholder="Enter NID or Birth Cert No" required></td>
+                </tr>
+            </table>
+        </fieldset>
 
-  <label>Immediate Emergency Type Needed:</label><br>
-  <input type="checkbox" id="emergency1" name="emergency" value="Food/Water">
-  <label for="emergency1"> Food/Water</label><br>
-  <input type="checkbox" id="emergency2" name="emergency" value="Medical Assistance">
-  <label for="emergency2"> Medical Assistance</label><br>
-  <input type="checkbox" id="emergency3" name="emergency" value="Evacuation">
-  <label for="emergency3"> Emergency Evacuation</label><br><br>
+        <br>
 
-  <label>Vulnerable Group Status:</label><br>
-  <input type="checkbox" id="vuln1" name="vulnerable" value="Infants">
-  <label for="vuln1"> Infants/Toddlers</label><br>
-  <input type="checkbox" id="vuln2" name="vulnerable" value="Elderly">
-  <label for="vuln2"> Elderly Members</label><br>
-  <input type="checkbox" id="vuln3" name="vulnerable" value="Disabled">
-  <label for="vuln3"> Persons with Disabilities</label><br><br>
+        <!-- Section 2: Disaster & Emergency Assistance Details -->
+        <fieldset>
+            <legend><b>2. Emergency & Disaster Location Details</b></legend>
+            <br>
+            <table border="0" cellpadding="8" align="center" width="90%">
+                <tr>
+                    <td><label for="region">Current District / Division:</label></td>
+                    <td><input type="text" id="region" name="region" placeholder="e.g. Feni / Sunamganj" required></td>
+                    
+                    <td><label for="shelter">Current Location / Shelter:</label></td>
+                    <td><input type="text" id="shelter" name="shelter" placeholder="e.g. Central Flood Shelter, Camp 2" required></td>
+                </tr>
+                <tr>
+                    <td><label for="emergency_type">Disaster / Emergency Type:</label></td>
+                    <td>
+                        <select id="emergency_type" name="emergency_type" required>
+                            <option value="" disabled selected>-- Select Emergency Type --</option>
+                            <option value="flood">Flood Relief</option>
+                            <option value="cyclone">Cyclone / Storm</option>
+                            <option value="landslide">Landslide</option>
+                            <option value="fire">Fire Incident</option>
+                            <option value="medical">Medical Emergency</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </td>
 
-  <label>Current Shelter Status:</label><br>
-  <input type="radio" id="status1" name="shelter" value="Trapped">
-  <label for="status1"> Trapped at Home</label><br>
-  <input type="radio" id="status2" name="shelter" value="Stranded">
-  <label for="status2"> Stranded on Embankment/Road</label><br><br>
+                    <td><label for="family_members">Family Members Affected:</label></td>
+                    <td><input type="number" id="family_members" name="family_members" min="1" placeholder="e.g. 4" required></td>
+                </tr>
+                <tr>
+                    <td><label for="assistance">Urgent Relief Required:</label></td>
+                    <td colspan="3">
+                        <input type="checkbox" id="req_food" name="assistance[]" value="food"> Food & Water
+                        <input type="checkbox" id="req_medical" name="assistance[]" value="medical"> Medical Help
+                        <input type="checkbox" id="req_shelter" name="assistance[]" value="shelter"> Shelter / Clothing
+                        <input type="checkbox" id="req_rescue" name="assistance[]" value="rescue"> Rescue Operation
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="notes">Emergency Description / Notes:</label></td>
+                    <td colspan="3">
+                        <textarea id="notes" name="notes" rows="3" style="width:100%; padding: 10px; border-radius: 8px; border: 2px solid #e2e8f0;" placeholder="Provide additional details regarding urgent needs..."></textarea>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
 
-  <input type="submit" value="Register">
-</form>
+        <br>
 
+        <!-- Section 3: Account Credentials -->
+        <fieldset>
+            <legend><b>3. System Login Credentials</b></legend>
+            <br>
+            <table border="0" cellpadding="8" align="center" width="90%">
+                <tr>
+                    <td><label for="email">User Email Address:</label></td>
+                    <td colspan="3"><input type="email" id="email" name="email" placeholder="example@domain.com" required size="30"></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Set Password:</label></td>
+                    <td><input type="password" id="password" name="password" placeholder="Enter password" required></td>
+
+                    <td><label for="confirm_password">Confirm Password:</label></td>
+                    <td><input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter password" required></td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="center">
+                        <br>
+                        <button type="submit">Submit Emergency Request</button>
+                        <button type="reset">Clear Form</button>
+                    </td>
+                </tr>
+            </table>
+            <br>
+        </fieldset>
+
+    </form>
+
+    <br>
+
+    <!-- Footer -->
+    <table border="0" width="100%" cellpadding="5">
+        <tr>
+            <td align="center">
+                <hr>
+                <small>&copy; 2026 ReliefGrid Disaster Management System | Victim Emergency Module</small>
+            </td>
+        </tr>
+    </table>
+
+    <script src="victim_registration.js"></script>
 </body>
 </html>
