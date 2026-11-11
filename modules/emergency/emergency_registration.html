@@ -1,55 +1,208 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Victim Registration - ReliefGrid</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReliefGrid - Emergency Victim Registration</title>
+    <link rel="stylesheet" href="emergency_registration.css">
 </head>
+
 <body>
 
-<h2>Victim Registration Form</h2>
+    <!-- Header Navigation Bar -->
+    <header class="navbar" id="emergency-navbar">
+        <div class="logo-container">
+            <h1 class="logo-title">ReliefGrid</h1>
+            <span class="logo-sub">Emergency Victim & Rescue Portal</span>
+        </div>
+        <nav class="nav-links">
+            <a href="../../index.html" class="btn-nav-outline">Go to Home Page</a>
+            <a href="../../login.html" class="btn-nav">Go to Login Page</a>
+        </nav>
+    </header>
 
-<form>
-  <label for="fullname">Full Name:</label><br>
-  <input type="text" id="fullname" name="fullname"><br><br>
+    <!-- Main Container -->
+    <main class="container">
 
-  <label for="phone">Contact / Mobile Number:</label><br>
-  <input type="tel" id="phone" name="phone"><br><br>
+        <div class="registration-card">
+            <div class="card-title-bar">
+                <h2>Emergency Victim Registration & Relief Request</h2>
+                <p>Urgent aid, rescue dispatch and flood relief assistance intake form</p>
+            </div>
 
-  <label for="email">Email Address:</label><br>
-  <input type="email" id="email" name="email"><br><br>
+            <form name="emergencyForm" id="emergencyForm" action="../../login.html" method="POST"
+                  onsubmit="return validateEmergencyForm()" onreset="clearEmergencyErrors()" class="emergency-form" novalidate>
 
-  <label for="password">Password:</label><br>
-  <input type="password" id="password" name="password"><br><br>
+                <!-- Section 1: Personal Credentials & Contact Details -->
+                <div class="form-section">
+                    <h3 class="section-heading">1. Personal & Account Credentials</h3>
+                    <div class="form-grid">
 
-  <label for="location">Current Location / Flood-Affected Area:</label><br>
-  <input type="text" id="location" name="location"><br><br>
+                        <div class="form-group">
+                            <label for="fullname">Full Name *</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="e.g. Progma Hossain">
+                            <span id="nameError" class="error-msg"></span>
+                        </div>
 
-  <label for="familysize">Family Size / Number of Dependents:</label><br>
-  <input type="number" id="familysize" name="familysize"><br><br>
+                        <div class="form-group">
+                            <label for="phone">Contact / Mobile Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="01XXXXXXXXX (11 Digits)">
+                            <span id="phoneError" class="error-msg"></span>
+                        </div>
 
-  <label>Immediate Emergency Type Needed:</label><br>
-  <input type="checkbox" id="emergency1" name="emergency" value="Food/Water">
-  <label for="emergency1"> Food/Water</label><br>
-  <input type="checkbox" id="emergency2" name="emergency" value="Medical Assistance">
-  <label for="emergency2"> Medical Assistance</label><br>
-  <input type="checkbox" id="emergency3" name="emergency" value="Evacuation">
-  <label for="emergency3"> Emergency Evacuation</label><br><br>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="victim@domain.com">
+                            <span id="emailError" class="error-msg"></span>
+                        </div>
 
-  <label>Vulnerable Group Status:</label><br>
-  <input type="checkbox" id="vuln1" name="vulnerable" value="Infants">
-  <label for="vuln1"> Infants/Toddlers</label><br>
-  <input type="checkbox" id="vuln2" name="vulnerable" value="Elderly">
-  <label for="vuln2"> Elderly Members</label><br>
-  <input type="checkbox" id="vuln3" name="vulnerable" value="Disabled">
-  <label for="vuln3"> Persons with Disabilities</label><br><br>
+                        <div class="form-group">
+                            <label for="password">Account Password *</label>
+                            <input type="password" id="password" name="password" placeholder="Min 6 chars with at least 1 number">
+                            <span id="passwordError" class="error-msg"></span>
+                        </div>
 
-  <label>Current Shelter Status:</label><br>
-  <input type="radio" id="status1" name="shelter" value="Trapped">
-  <label for="status1"> Trapped at Home</label><br>
-  <input type="radio" id="status2" name="shelter" value="Stranded">
-  <label for="status2"> Stranded on Embankment/Road</label><br><br>
+                        <div class="form-group full-width">
+                            <label for="confirm_password">Confirm Password *</label>
+                            <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter password to match">
+                            <span id="confirmPasswordError" class="error-msg"></span>
+                        </div>
 
-  <input type="submit" value="Register">
-</form>
+                    </div>
+                </div>
 
+                <!-- Section 2: Disaster Location & Emergency Status (Role Specific) -->
+                <div class="form-section">
+                    <h3 class="section-heading">2. Flood Location & Disaster Status</h3>
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="location">Current Location / Affected Area *</label>
+                            <input type="text" id="location" name="location" placeholder="e.g. Feni Sadar, Ward 04, Near Central School">
+                            <span id="locationError" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="familysize">Family Size (1 - 30 Persons) *</label>
+                            <input type="number" id="familysize" name="familysize" min="1" max="30" placeholder="e.g. 5">
+                            <span id="familyError" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="urgency">Urgency / Severity Level *</label>
+                            <select id="urgency" name="urgency">
+                                <option value="">-- Select Urgency Level --</option>
+                                <option value="critical">Critical - Life-Threatening Danger (Immediate Rescue)</option>
+                                <option value="high">High - Water Level Rising (Needs Evacuation Soon)</option>
+                                <option value="medium">Medium - Stranded but Safe (Needs Food / Clean Water)</option>
+                                <option value="low">Low - Water Receding (Needs Relief Supplies)</option>
+                            </select>
+                            <span id="urgencyError" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Current Shelter Status *</label>
+                            <div class="radio-group">
+                                <label for="statusTrapped">
+                                    <input type="radio" id="statusTrapped" name="shelter_status" value="Trapped at Home">
+                                    Trapped at Home / Rooftop
+                                </label>
+                                <label for="statusStranded">
+                                    <input type="radio" id="statusStranded" name="shelter_status" value="Stranded on Road">
+                                    Stranded on Embankment / Highway
+                                </label>
+                                <label for="statusShelter">
+                                    <input type="radio" id="statusShelter" name="shelter_status" value="In Temporary Camp">
+                                    In Makeshift Temporary Shelter
+                                </label>
+                            </div>
+                            <span id="statusError" class="error-msg"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Section 3: Relief & Aid Requirements (Role Specific) -->
+                <div class="form-section">
+                    <h3 class="section-heading">3. Emergency Assistance Needed</h3>
+                    <div class="form-grid">
+
+                        <div class="form-group full-width">
+                            <label>Immediate Emergency Type Needed (Choose at least one) *</label>
+                            <div class="checkbox-group">
+                                <label for="aidFood">
+                                    <input type="checkbox" id="aidFood" name="emergency_aid" value="Food/Water">
+                                    Emergency Food &amp; Drinking Water
+                                </label>
+                                <label for="aidMedical">
+                                    <input type="checkbox" id="aidMedical" name="emergency_aid" value="Medical Assistance">
+                                    First Aid &amp; Medical Assistance
+                                </label>
+                                <label for="aidEvac">
+                                    <input type="checkbox" id="aidEvac" name="emergency_aid" value="Evacuation">
+                                    Rescue Boat &amp; Emergency Evacuation
+                                </label>
+                                <label for="aidBaby">
+                                    <input type="checkbox" id="aidBaby" name="emergency_aid" value="Baby Food">
+                                    Baby Food &amp; Infant Care Kits
+                                </label>
+                            </div>
+                            <span id="aidError" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Vulnerable Members in Household (Optional)</label>
+                            <div class="checkbox-group">
+                                <label for="vulnInfants">
+                                    <input type="checkbox" id="vulnInfants" name="vulnerable" value="Infants">
+                                    Infants / Toddlers
+                                </label>
+                                <label for="vulnElderly">
+                                    <input type="checkbox" id="vulnElderly" name="vulnerable" value="Elderly">
+                                    Elderly Members (60+ yrs)
+                                </label>
+                                <label for="vulnDisabled">
+                                    <input type="checkbox" id="vulnDisabled" name="vulnerable" value="Disabled">
+                                    Persons with Disabilities
+                                </label>
+                                <label for="vulnPregnant">
+                                    <input type="checkbox" id="vulnPregnant" name="vulnerable" value="Pregnant">
+                                    Pregnant / Nursing Women
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="landmarks">Landmark &amp; Critical Emergency Notes</label>
+                            <textarea id="landmarks" name="landmarks" rows="3"
+                                placeholder="Mention prominent landmarks (e.g. near red water tank, opposite mosque), current water height, or special patient conditions..."></textarea>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Emergency Request</button>
+                    <button type="reset" class="btn btn-secondary">Clear Form</button>
+                </div>
+
+                <!-- Success Message Display using innerHTML -->
+                <p id="regSuccess" class="success-msg"></p>
+
+            </form>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 ReliefGrid Disaster Management System | Emergency Victim Module</p>
+    </footer>
+
+    <!-- External JavaScript connection (Lab Task 03) -->
+    <script src="emergency_registration.js"></script>
 </body>
+
 </html>
