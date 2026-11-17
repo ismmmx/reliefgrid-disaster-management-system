@@ -96,9 +96,15 @@ function warehousefunc() {
 }
 
 function regionfunc() {
-    let region = document.getElementById("region").value;
+    let region = document.getElementById("region").value.trim();
+    let letterPattern = /^[A-Za-z\s]+$/;
+
     if (region === "") {
         document.getElementById("regionerror").innerHTML = "Assigned district required";
+        document.getElementById("regionerror").style.color = "red";
+        return false;
+    } else if (!letterPattern.test(region)) {
+        document.getElementById("regionerror").innerHTML = "District name must contain only characters";
         document.getElementById("regionerror").style.color = "red";
         return false;
     } else {
