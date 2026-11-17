@@ -45,7 +45,6 @@ function dobfunc() {
   } else {
     let birthYear = new Date(dob).getFullYear();
     let currentYear = new Date().getFullYear();
-
     if (currentYear - birthYear < 18) {
       document.getElementById("dobError").innerHTML =
         "Admin must be at least 18 years old";
