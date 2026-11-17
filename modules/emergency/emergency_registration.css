@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Body Styling with Background Gradient & Flex Layout */
+body {
+    background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 50%, #edf2f7 100%);
+    color: #2d3748;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 3. Sticky Header Navigation Bar */
+#emergency-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.12);
+    border-bottom: 2px solid #fed7d7;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    color: #dc3545;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.logo-sub {
+    font-size: 0.85rem;
+    color: #718096;
+    display: block;
+    margin-top: -3px;
+    font-weight: 500;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-nav-outline {
+    border: 2px solid #dc3545;
+    color: #dc3545;
+    background-color: transparent;
+}
+
+.btn-nav-outline:hover {
+    background-color: #dc3545;
+    color: #ffffff;
+    box-shadow: 0 3px 8px rgba(220, 53, 69, 0.25);
+}
+
+.btn-nav {
+    background-color: #dc3545;
+    color: #ffffff !important;
+    border: 2px solid #dc3545;
+}
+
+.btn-nav:hover {
+    background-color: #bb2d3b;
+    border-color: #bb2d3b;
+    box-shadow: 0 3px 8px rgba(187, 45, 59, 0.3);
+}
+
+/* 4. Main Container */
+.container {
+    flex: 1;
+    max-width: 900px;
+    width: 92%;
+    margin: 2.5rem auto;
+}
+
+/* 5. Registration Card Component */
+.registration-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid #fee2e2;
+}
+
+.card-title-bar {
+    background: linear-gradient(135deg, #dc3545 0%, #991b1b 100%);
+    color: #ffffff;
+    padding: 1.8rem 2rem;
+    text-align: center;
+}
+
+.card-title-bar h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.card-title-bar p {
+    font-size: 0.95rem;
+    opacity: 0.92;
+}
+
+/* 6. Emergency Form Layout */
+.emergency-form {
+    padding: 2rem;
+}
+
+.form-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 1rem;
+}
+
+.section-heading {
+    font-size: 1.15rem;
+    color: #991b1b;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* 7. Responsive CSS Grid for Form Fields */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* 8. Labels and Inputs */
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 0.4rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.68rem 0.9rem;
+    font-size: 0.95rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #2d3748;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.18);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* 9. Radio and Checkbox Groups */
+.checkbox-group,
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem 1.2rem;
+    padding: 0.8rem 1rem;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-top: 0.3rem;
+}
+
+.checkbox-group label,
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #2d3748;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.checkbox-group input[type="checkbox"],
+.radio-group input[type="radio"] {
+    accent-color: #dc3545;
+    width: 1.1rem;
+    height: 1.1rem;
+    cursor: pointer;
+}
+
+/* 10. Error and Success Message Styling */
+.error-msg {
+    font-size: 0.82rem;
+    color: #dc3545;
+    margin-top: 0.35rem;
+    font-weight: 600;
+    min-height: 1.1rem;
+    display: block;
+}
+
+.success-msg {
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #198754;
+    margin-top: 1.5rem;
+    min-height: 1.4rem;
+}
+
+/* 11. Form Action Buttons (Flexbox) */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid #edf2f7;
+}
+
+.btn {
+    padding: 0.75rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #dc3545;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.25);
+}
+
+.btn-primary:hover {
+    background-color: #bb2d3b;
+    box-shadow: 0 6px 14px rgba(187, 45, 59, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: #4a5568;
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e1;
+    color: #1a202c;
+}
+
+/* 12. Footer */
+.footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    color: #718096;
+    font-size: 0.88rem;
+    margin-top: auto;
+}
+
+/* 13. Responsive Media Query */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-title-bar {
+        padding: 1.4rem 1.2rem;
+    }
+
+    .emergency-form {
+        padding: 1.3rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem;
+    }
+}
