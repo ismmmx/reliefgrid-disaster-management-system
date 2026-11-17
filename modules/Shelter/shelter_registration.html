@@ -1,114 +1,153 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Shelter Registration - ReliefGrid</title>
+
+    <link rel="stylesheet" href="shelter_registration.css">
 </head>
 <body>
- 
-   
-    <header>
-        <h1>ReliefGrid: Disaster Management System</h1>
-        <nav>
-            <ul>
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../admin/login.html">Login</a></li>
-                <li><a href="shelter_registration.html">Register</a></li>
-            </ul>
-        </nav>
-    </header>
- 
-    <hr>
- 
-    <main>
-        <h2>Create Shelter Provider Account</h2>
-        <p>Fill out the form below to register your shelter facility in the ReliefGrid platform.</p>
- 
-   
-        <form action="login.html" method="POST" enctype="multipart/form-data">
-           
-           
-            <fieldset>
-                <legend>Personal & Account Information</legend>
-               
-                <p>
-                    <label for="fullname">Full Name:</label><br>
-                    <input type="text" id="fullname" name="fullname" size="45" required placeholder="Enter full name">
-                </p>
- 
-                <p>
-                    <label for="email">Email Address:</label><br>
-                    <input type="email" id="email" name="email" size="45" required placeholder="example@domain.com">
-                </p>
- 
-                <p>
-                    <label for="phone">Phone Number:</label><br>
-                    <input type="tel" id="phone" name="phone" size="45" required placeholder="017XXXXXXXX">
-                </p>
- 
-                <p>
-                    <label for="password">Password:</label><br>
-                    <input type="password" id="password" name="password" size="45" required minlength="8" placeholder="Create password">
-                </p>
-            </fieldset>
- 
+
+    <table border="1" width="100%" cellpadding="10">
+        <tr>
+            <td align="center">
+                <h1>ReliefGrid</h1>
+                <h3>Shelter Provider Account Registration</h3>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table border="1" width="100%" cellpadding="8">
+        <tr>
+            <td align="center">
+                <a href="../../index.html"><button type="button">Go to Home Page</button></a> |
+                <a href="../../login.html"><button type="button">Go to Login Page</button></a>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <form action="login.html" method="POST" enctype="multipart/form-data">
+
+        <fieldset>
+            <legend><b>1. Personal & Account Information</b></legend>
             <br>
- 
-           
-            <fieldset>
-                <legend>Shelter Facility & Logistics Details</legend>
- 
-                <p>
-                    <label for="shelter_name">Shelter Name:</label><br>
-                    <input type="text" id="shelter_name" name="shelter_name" size="45" required placeholder="e.g. Central Community Shelter">
-                </p>
- 
-                <p>
-                    <label for="shelter_address">Shelter Location / Address:</label><br>
-                    <textarea id="shelter_address" name="shelter_address" rows="4" cols="45" required placeholder="Enter full street/area details"></textarea>
-                </p>
- 
-                <p>
-                    <label for="capacity">Shelter Capacity (Total Capacity):</label><br>
-                    <input type="number" id="capacity" name="capacity" min="10" max="10000" required placeholder="e.g. 500">
-                </p>
- 
-                <p>
-                    <label for="shelter_type">Shelter Type:</label><br>
-                    <select id="shelter_type" name="shelter_type" required>
-                        <option value="">-- Select Shelter Type --</option>
-                        <option value="school">School / College Building</option>
-                        <option value="community">Community Center</option>
-                        <option value="cyclone">Cyclone / Flood Shelter</option>
-                        <option value="camp">Temporary Relief Camp</option>
-                    </select>
-                </p>
- 
-                <p>
-                    <label for="gov_id">NID / Government ID Upload:</label><br>
-                    <input type="file" id="gov_id" name="gov_id" required>
-                </p>
-            </fieldset>
- 
+
+            <table border="0" cellpadding="8" align="center" width="90%">
+                <tr>
+                    <td><label for="fullname">Full Name:</label></td>
+                    <td>
+                        <input type="text" id="fullname" name="fullname"
+                        placeholder="Enter full name" required>
+                    </td>
+
+                    <td><label for="email">Email Address:</label></td>
+                    <td>
+                        <input type="email" id="email" name="email"
+                        placeholder="example@domain.com" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="phone">Phone Number:</label></td>
+                    <td>
+                        <input type="tel" id="phone" name="phone"
+                        placeholder="017XXXXXXXX" required>
+                    </td>
+
+                    <td><label for="password">Password:</label></td>
+                    <td>
+                        <input type="password" id="password" name="password"
+                        placeholder="Create password" minlength="8" required>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend><b>2. Shelter Facility & Logistics Details</b></legend>
             <br>
- 
-         
-            <p>
-                <input type="submit" value="Register Shelter">
-            </p>
-            <p>
-                <input type="reset" value="Clear All Fields">
-            </p>
- 
-        </form>
- 
-    </main>
- 
-    <hr>
- 
-    <footer>
-        <p><a href="/index.html">Exit / Back to Home</a></p>
-    </footer>
- 
+
+            <table border="0" cellpadding="8" align="center" width="90%">
+                <tr>
+                    <td><label for="shelter_name">Shelter Name:</label></td>
+                    <td>
+                        <input type="text" id="shelter_name" name="shelter_name"
+                        placeholder="e.g. Central Community Shelter" required>
+                    </td>
+
+                    <td><label for="capacity">Shelter Capacity:</label></td>
+                    <td>
+                        <input type="number" id="capacity" name="capacity"
+                        min="10" max="10000" placeholder="e.g. 500" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="shelter_address">Shelter Location / Address:</label></td>
+                    <td colspan="3">
+                        <input type="text" id="shelter_address" name="shelter_address"
+                        placeholder="Enter full street/area details" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="shelter_type">Shelter Type:</label></td>
+                    <td>
+                        <select id="shelter_type" name="shelter_type" required>
+                            <option value="" disabled selected>-- Select Shelter Type --</option>
+                            <option value="school">School / College Building</option>
+                            <option value="community">Community Center</option>
+                            <option value="cyclone">Cyclone / Flood Shelter</option>
+                            <option value="camp">Temporary Relief Camp</option>
+                        </select>
+                    </td>
+
+                    <td><label for="gov_id">NID / Government ID Upload:</label></td>
+                    <td>
+                        <input type="file" id="gov_id" name="gov_id">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend><b>3. Account Registration</b></legend>
+            <br>
+
+            <table border="0" cellpadding="8" align="center" width="90%">
+                <tr>
+                    <td colspan="4" align="center">
+                        <button type="submit">Register Shelter</button>
+                        <button type="reset">Clear All Fields</button>
+                    </td>
+                </tr>
+            </table>
+            <br>
+        </fieldset>
+
+    </form>
+
+    <br>
+
+    <table border="0" width="100%" cellpadding="5">
+        <tr>
+            <td align="center">
+                <hr>
+                <small>© 2026 ReliefGrid Disaster Management System | Shelter Module</small>
+            </td>
+        </tr>
+    </table>
+
 </body>
 </html>
