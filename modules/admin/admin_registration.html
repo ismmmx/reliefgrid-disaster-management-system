@@ -10,7 +10,8 @@
 
 <body>
 
-    <header class="navbar" id="admin-navbar">
+    <!-- Header Navigation Bar -->
+    <header class="navbar">
         <div class="logo-container">
             <h1 class="logo-title">ReliefGrid</h1>
             <span class="logo-sub">Admin Registration Portal</span>
@@ -32,9 +33,11 @@
             <form name="adminForm" id="adminForm" action="javascript:void(0);" method="post"
                   onsubmit="return validation()" onreset="clearAdminErrors()" class="admin-form" novalidate>
 
-                <fieldset class="form-fieldset">
-                    <legend>1. Personal & Account Credentials</legend>
+                <!-- Section 1: Basic Information -->
+                <div class="form-section">
+                    <h3 class="section-heading">1. Personal & Account Credentials</h3>
                     <div class="form-grid">
+
                         <div class="form-group">
                             <label for="fullname">Full Name *</label>
                             <!-- onkeyup triggers the function every time a key is pressed -->
@@ -73,11 +76,13 @@
                             <span id="confirmPasswordError" class="error-msg"></span>
                         </div>
                     </div>
-                </fieldset>
+                </div>
 
-                <fieldset class="form-fieldset">
-                    <legend>2. Administrative Authorization & Jurisdiction</legend>
+                <!-- Section 2: Administrative Privilege & Authorization -->
+                <div class="form-section">
+                    <h3 class="section-heading">2. Administrative Authorization & Jurisdiction</h3>
                     <div class="form-grid">
+
                         <div class="form-group">
                             <label for="region">Assigned Region / District *</label>
                             <input type="text" id="region" name="region" placeholder="e.g. Feni, Sylhet, Noakhali" onkeyup="regionfunc()">
